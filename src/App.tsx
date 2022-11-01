@@ -22,7 +22,6 @@ const Technologies = () => {
         </div>
     )
 }
-}
 
 const Header = () => {
     return (
