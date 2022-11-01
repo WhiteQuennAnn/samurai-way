@@ -5,14 +5,7 @@ const App = () => {
     return (
         <div>
          <Header />
-            <div>
-                <ul>
-                    <li>css</li>
-                    <li>html</li>
-                    <li>js</li>
-                    <li>react</li>
-                </ul>
-            </div>
+            < Technologies />
         </div>
     );
 }
