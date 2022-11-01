@@ -4,8 +4,8 @@ import './App.css';
 const App = () => {
     return (
         <div>
-            <div> <Header /> </div>
-            <div className="App">
+         <Header />
+            <div>
                 <ul>
                     <li>css</li>
                     <li>html</li>
@@ -19,10 +19,10 @@ const App = () => {
 const Header = () => {
     return (
 
-            <div className="App">
-                <a>Home</a>
-                <a>New Feed</a>
-                <a>Messages</a>
+            <div>
+                <a href ="#s">Home</a>
+                <a href ="#s">New Feed</a>
+                <a href ="#s">Messages</a>
             </div>
             );
 }
