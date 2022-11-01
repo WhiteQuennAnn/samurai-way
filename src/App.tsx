@@ -4,7 +4,7 @@ import './App.css';
 const App = () => {
     return (
         <div>
-            <div> one div</div>
+            <div> <Header /> </div>
             <div className="App">
                 <ul>
                     <li>css</li>
@@ -15,6 +15,16 @@ const App = () => {
             </div>
         </div>
     );
+}
+const Header = () => {
+    return (
+
+            <div className="App">
+                <a>Home</a>
+                <a>New Feed</a>
+                <a>Messages</a>
+            </div>
+            );
 }
 
 export default App;
