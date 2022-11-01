@@ -9,4 +9,5 @@ const Header = () => {
             <a href="#s">Messages</a>
         </div>
     );
-} export default Header;
+}
+export default Header;
