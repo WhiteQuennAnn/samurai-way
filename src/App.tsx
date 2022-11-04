@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {Header} from "./components/header";
 import {Nav} from "./components/nav";
-import {Profile} from "./components/Profile";
+import {Profile} from "./components/profile";
 
 export const App = () => {
     return (

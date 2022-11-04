@@ -9,22 +9,7 @@
     /*grid-gap: 10px;*/
 }
 
-.header {
-    grid-area: h;
-    background-color: blueviolet;
-}
-
-.header img {
-    width: 20px;
-}
 
 
-.nav {
-    grid-area: n;
-    background-color: crimson;
-}
 
-.content {
-    grid-area: c;
-    background-color: chartreuse;
-}
+
