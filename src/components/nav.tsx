@@ -1,6 +1,7 @@
 import React from 'react';
 import s from "./nav.module.css";
 
+let classesNew = `${s.item} ${s.active}`
 export const Nav = () => {
     return (
         <div>
