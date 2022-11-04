@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Header = () => {
-    return(
+    return (
         <div>
             <header className="header">
                 <img
@@ -9,6 +9,6 @@ export const Header = () => {
 
             </header>
         </div>
-        )
+    )
 
 }

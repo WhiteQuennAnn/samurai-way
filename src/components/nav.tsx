@@ -13,6 +13,6 @@ export const Nav = () => {
 
             </nav>
         </div>
-        )
+    )
 
 }
