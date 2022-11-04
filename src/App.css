@@ -1,5 +1,8 @@
 .app-wrapper {
   display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
 }
 .header {
   grid-area: h;
