@@ -6,7 +6,8 @@ export const MyPosts = () => {
                    <div>
                 My posts
                 <div>
-                    New post
+                  <textarea></textarea>
+                    <button> Add post </button>
                 </div>
                 <div className={s.posts}>
                     <div className={s.item}>
