@@ -1,3 +1,6 @@
 .item {
     color: aqua;
 }
+.item img {
+    width: 30px;
+}

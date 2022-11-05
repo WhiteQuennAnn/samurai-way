@@ -12,6 +12,7 @@ export const MyPosts = () => {
                 </div>
                 <div className={s.posts}>
                     <div className={s.item}>
+                        <img src={"https://klike.net/uploads/posts/2022-06/1655792831_4.jpg"}/>
                         post 1
                     </div>
                     <div className={s.item}>
