@@ -3,4 +3,6 @@
 }
 .item img {
     width: 30px;
+    height: 45px;
+    border-radius: 40px;
 }
