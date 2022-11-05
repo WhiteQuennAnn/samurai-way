@@ -6,8 +6,12 @@ export const Post = () => {
         <div className={s.item}>
             <img src={"https://klike.net/uploads/posts/2022-06/1655792831_4.jpg"}/>
             post 1
-            <span>like</span>
-            <span>dislike</span>
+            <div>
+                <span>like</span>
+                <div>
+                    <span>dislike</span>
+                </div>
+            </div>
         </div>
     )
 }
