@@ -5,7 +5,7 @@ export const Dialogs = (props: any) => {
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                <div className={s.dialog}>Anya</div>
+                <div className={s.dialog + ' ' + s.active}>Anya</div>
                 <div className={s.dialog}>Dima</div>
                 <div className={s.dialog}>Igor</div>
             </div>

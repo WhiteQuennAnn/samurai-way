@@ -1,12 +1,17 @@
 .dialogs {
-
+display: grid;
+    grid-template-columns: 2fr 10fr;
 }
-.dialogs .dialogsItems {
+.dialogsItems {
+    padding: 10px;
 
-}
+}.dialogs .active {
+     color: blueviolet;
+
+ }
 
 .messages {
-
+    padding: 10px;
 }
 
 .messages .message {
