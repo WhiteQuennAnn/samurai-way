@@ -4,9 +4,10 @@
 }
 
 
-.item {
+.item a {
     color: white;
+    text-decoration: none;
 }
-.item.active {
-    color: lawngreen;
+.item a.activeLink {
+    color: blue;
 }
