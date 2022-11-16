@@ -16,13 +16,14 @@ export const App = (props: any) => {
                 <div className="app-wrapper-content">
                     <Route path='/dialogs' component={Dialogs}/>
                     <Route path='/profile' component={Profile}/>
-                    <Route component={News}/>
-                    <Route component={Music}/>
-                    <Route component={Settings}/>
+                    {/*    <Route component={News}/>*/}
+                    {/*    <Route component={Music}/>*/}
+                    {/*    <Route component={Settings}/>*/}
                 </div>
             </div>
         </BrowserRouter>
     );
 }
+
 
 
