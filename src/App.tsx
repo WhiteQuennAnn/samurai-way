@@ -11,7 +11,7 @@ export const App = () => {
             <Header/>
             <Nav/>
             {/*<Profile/>*/}
-            <div className=" app-wrapper-content">
+            <div className="app-wrapper-content">
                 <Dialogs/>
             </div>
 
