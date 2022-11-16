@@ -3,14 +3,20 @@ import s from './Dialogs.module.css';
 
 export const Dialogs = (props: any) => {
     return (
-        <div className="dialogs">
-            <div className="dialogs-items">
-                <div className="item">Anya</div>
-                <div className="item">Dima</div>
-                <div className="item">Igor</div>
+        <div className={s.dialogs}>
+            <div className={s.dialogsItems}>
+                <div className={s.dialog}>Anya</div>
+                <div className={s.dialog}>Dima</div>
+                <div className={s.dialog}>Igor</div>
+            </div>
+            <div className={s.messages}>
+                <div className={s.message}>Hello</div>
+                <div className={s.message}>Pike</div>
+                <div className={s.message}>Buy</div>
             </div>
 
         </div>
+
     );
 };
 
