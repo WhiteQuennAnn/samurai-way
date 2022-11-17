@@ -1,13 +1,13 @@
 import React from 'react';
 import s from "./profile.module.css";
 import {MyPosts} from "./My posts/MyPosts";
+import {ProfileInfo} from "./ProfileInfo/profileInfo";
 
 export const Profile = () => {
     return (
         <div>
-            <div>
-                <img src="https://mobimg.b-cdn.net/v3/fetch/10/10b532bc3da4dd2e0715ea146abd32d4.jpeg"/>
-            </div>
+            <ProfileInfo/>
+
             <div>
                 ava+description
             </div>
