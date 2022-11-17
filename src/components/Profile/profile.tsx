@@ -8,9 +8,6 @@ export const Profile = () => {
         <div>
             <ProfileInfo/>
 
-            <div>
-                ava+description
-            </div>
             <MyPosts/>
         </div>
     )
