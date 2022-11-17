@@ -7,15 +7,16 @@ type DialogItemType = {
     id: number
 }
 
+type MessageItemProps = {
+    message: string
+}
+
 const DialogItem = (props: DialogItemType) => {
     return (
         <div className={s.dialog + ' ' + s.active}>
             <NavLink to={"/dislogs/" + props.id}>{props.name}</NavLink>
         </div>
     )
-}
-type MessageItemProps = {
-    message: string
 }
 
 const MessageItem =(props: MessageItemProps)=>{
