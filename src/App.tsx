@@ -14,8 +14,8 @@ export const App = (props: any) => {
                 <Nav/>
 
                 <div className="app-wrapper-content">
-                    <Route exact path='/dialogs' component={Dialogs}/>
-                    <Route exact path='/profile' component={Profile}/>
+                    <Route path='/dialogs' component={Dialogs}/>
+                    <Route path='/profile' component={Profile}/>
                     {/*    <Route component={News}/>*/}
                     {/*    <Route component={Music}/>*/}
                     {/*    <Route component={Settings}/>*/}
