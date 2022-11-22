@@ -3,13 +3,16 @@ import s from './Dialogs.module.css';
 import {DialogItem} from "./DialogItem/DialogsItem";
 import {MessageItem} from "./Message/Message";
 
-
+type Global = {
+    dialogsData: Array<OneDialogsDataPropsType>
+    messageItemData: Array<OneMessageItemDataProps>
+}
 type OneDialogsDataPropsType = {
     id: number
     name: string
 }
-    type DialogsDataProps = {
-    dialogsData : Array<OneDialogsDataPropsType>
+type DialogsDataProps = {
+    dialogsData: Array<OneDialogsDataPropsType>
 }
 
 type OneMessageItemDataProps = {
@@ -17,10 +20,10 @@ type OneMessageItemDataProps = {
     message: string
 }
 
-type MessageItemDataProps ={
+type MessageItemDataProps = {
     messageItemData: Array<OneMessageItemDataProps>
 }
-export const Dialogs = (props: DialogsDataProps) => {
+export const Dialogs = (props: Global ) => {
 
     // let dialogsData = [
     //     {id: 1, name: "Anya"},
@@ -37,8 +40,8 @@ export const Dialogs = (props: DialogsDataProps) => {
     let dialogsElements = props.dialogsData
         .map(d => <DialogItem name={d.name} id={d.id}/>);
 
-let messagesElenents = props.messageItemData
-      .map(m => <MessageItem message={m.message}/>)
+    let messagesElenents = props.messageItemData
+        .map(m => <MessageItem message={m.message}/>)
     return (
 
         <div className={s.dialogs}>
