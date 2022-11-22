@@ -19,13 +19,19 @@ const DialogItem = (props: DialogItemType) => {
     )
 }
 
-const MessageItem =(props: MessageItemProps)=>{
+const MessageItem = (props: MessageItemProps) => {
     return (
         <div className={s.message}>{props.message}</div>
     )
 }
 
 export const Dialogs = (props: any) => {
+
+    let dialogsData = [
+        {id: 1, name: "Anya"},
+        {id: 2, name: "Dima"},
+        {id: 3, name: "Igor"}
+    ]
     return (
 
         <div className={s.dialogs}>
