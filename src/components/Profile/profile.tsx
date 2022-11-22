@@ -4,11 +4,14 @@ import {MyPosts} from "./My posts/MyPosts";
 import {ProfileInfo} from "./ProfileInfo/profileInfo";
 
 export const Profile = () => {
+    let postsData = [
+        {id: 1, message: "Hey how are you", likesCount: 22},
+        {id: 2, message: "its my first post", likesCount: 65}
+    ]
     return (
         <div>
             <ProfileInfo/>
-
-            <MyPosts/>
+            <MyPosts postsData={postsData}/>
         </div>
     )
 }
