@@ -32,7 +32,7 @@ export const Dialogs = (props: any) => {
         {id: 2, name: "Dima"},
         {id: 3, name: "Igor"}
     ]
-    let MessageItemData = [
+    let messageItemData = [
         {id: 1, message: "Hello"},
         {id: 2, message: "Pike"},
         {id: 3, message: "Buy"}
@@ -48,9 +48,9 @@ export const Dialogs = (props: any) => {
 
             </div>
             <div className={s.messages}>
-                <MessageItem message={MessageItemData[0].message}/>
-                <MessageItem message={MessageItemData[1].message}/>
-                <MessageItem message={MessageItemData[2].message}/>
+                <MessageItem message={messageItemData[0].message}/>
+                <MessageItem message={messageItemData[1].message}/>
+                <MessageItem message={messageItemData[2].message}/>
 
             </div>
 
