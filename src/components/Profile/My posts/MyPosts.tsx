@@ -1,6 +1,7 @@
 import React from 'react';
 import s from "./MyPosts.module.css";
 import {Post} from "./Post/Post";
+
 type OnePostTypeProps = {
     id: number
     message: string
@@ -11,7 +12,7 @@ type MyPostsTypeProps = {
 }
 
 
-export const MyPosts = (props:MyPostsTypeProps) => {
+export const MyPosts = (props: MyPostsTypeProps) => {
     // let postsData = [
     //     {id: 1, message: "Hey how are you", likesCount: 22},
     //     {id: 2, message: "its my first post", likesCount: 65}

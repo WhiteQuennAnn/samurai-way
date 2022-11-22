@@ -9,6 +9,10 @@ import {BrowserRouter, Route} from "react-router-dom";
 let SomeComponent = () => <Dialogs/>
 
 export const App = (props: any) => {
+    // let postsData = [
+    //     {id: 1, message: "Hey how are you", likesCount: 22},
+    //     {id: 2, message: "its my first post", likesCount: 65}
+    // ]
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -20,7 +24,7 @@ export const App = (props: any) => {
                     {/*<Route path='/profile' component={Profile}/>*/}
 
                     <Route path='/dialogs' render={SomeComponent}/>
-                    <Route path='/profile' render={() => <Profile/>}/>
+                    <Route path='/profile' render={() => <Profile postsData={props.postsData}/>}/>
 
                 </div>
             </div>
