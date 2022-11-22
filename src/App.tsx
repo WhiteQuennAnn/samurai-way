@@ -6,9 +6,8 @@ import {Profile} from "./components/Profile/profile";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 
-let SomeComponent = () => <Dialogs dialogsData={props.dialogsData} messageItemData={props.messageItemData}/>
 
-export const App = (props: any) => {
+export const App = (props: any ) => {
     // let postsData = [
     //     {id: 1, message: "Hey how are you", likesCount: 22},
     //     {id: 2, message: "its my first post", likesCount: 65}
@@ -20,7 +19,7 @@ export const App = (props: any) => {
                 <Nav/>
 
                 <div className="app-wrapper-content">
-                    <Route path='/dialogs' render={SomeComponent}/>
+                    <Route path='/dialogs' render={() =><Dialogs dialogsData={props.dialogsData} messageItemData={props.messageItemData}/>}/>
                     <Route path='/profile' render={() => <Profile postsData={props.postsData}/>}/>
 
                 </div>

@@ -11,19 +11,14 @@ type OneDialogsDataPropsType = {
     id: number
     name: string
 }
-type DialogsDataProps = {
-    dialogsData: Array<OneDialogsDataPropsType>
-}
 
 type OneMessageItemDataProps = {
     id: number
     message: string
 }
 
-type MessageItemDataProps = {
-    messageItemData: Array<OneMessageItemDataProps>
-}
-export const Dialogs = (props: Global ) => {
+
+export const Dialogs = (props: Global) => {
 
     // let dialogsData = [
     //     {id: 1, name: "Anya"},
