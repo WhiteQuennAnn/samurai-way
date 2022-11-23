@@ -14,7 +14,7 @@ import {StateType} from "./Type";
 //     postsData: Array<OnePostTypeProps>
 // }
 
-export const App = (props: any) => {
+export const App = (props: StateType) => {
     // let postsData = [
     //     {id: 1, message: "Hey how are you", likesCount: 22},
     //     {id: 2, message: "its my first post", likesCount: 65}
