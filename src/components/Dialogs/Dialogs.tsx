@@ -2,20 +2,21 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import {DialogItem} from "./DialogItem/DialogsItem";
 import {MessageItem} from "./Message/Message";
+import {Global} from "../../Type";
 
-export type Global = {
-    dialogsData: Array<OneDialogsDataPropsType>
-    messageItemData: Array<OneMessageItemDataProps>
-}
-export type OneDialogsDataPropsType = {
-    id: number
-    name: string
-}
-
-export type OneMessageItemDataProps = {
-    id: number
-    message: string
-}
+// export type Global = {
+//     dialogsData: Array<OneDialogsDataPropsType>
+//     messageItemData: Array<OneMessageItemDataProps>
+// }
+// export type OneDialogsDataPropsType = {
+//     id: number
+//     name: string
+// }
+//
+// export type OneMessageItemDataProps = {
+//     id: number
+//     message: string
+// }
 
 
 export const Dialogs = (props: Global) => {
@@ -32,10 +33,10 @@ export const Dialogs = (props: Global) => {
     //     {id: 3, message: "Buy"}
     // ]
 
-    let dialogsElements = props.dialogsData
+    let dialogsElements = props.
         .map(d => <DialogItem name={d.name} id={d.id}/>);
 
-    let messagesElenents = props.messageItemData
+    let messagesElenents = props.state.messageItemData
         .map(m => <MessageItem message={m.message}/>)
     return (
 

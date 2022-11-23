@@ -1,12 +1,22 @@
 import React from 'react';
+import {OnePostTypeProps} from "../components/Profile/My posts/MyPosts";
+import {OneDialogsDataPropsType, OneMessageItemDataProps} from "../components/Dialogs/Dialogs";
+
+// export type StateType = {
+//     profilePage: Array<OnePostTypeProps>
+//     dialogsPage: {
+//         messageItemData: Array<OneMessageItemDataProps>
+//         dialogsData: Array<OneDialogsDataPropsType>
+//     }
+// }
 
 let state = {
-    profilePage = {
+    profilePage: {
         postsData: [
             {id: 1, message: "Hey how are you", likesCount: 22},
             {id: 2, message: "its my first post", likesCount: 65}]
     },
-    dialogsPage = {
+    dialogsPage: {
         messageItemData: [
             {id: 1, message: "Hello"},
             {id: 2, message: "Pike"},
@@ -18,7 +28,5 @@ let state = {
             {id: 3, name: "Igor"}
         ],
     }
-
-
 }
 export default state;

@@ -11,7 +11,7 @@ export const Profile = (props: any) => {
     return (
         <div>
             <ProfileInfo/>
-            <MyPosts postsData={props.postsData}/>
+            <MyPosts postsData={props.state.postsData}/>
         </div>
     )
 }
