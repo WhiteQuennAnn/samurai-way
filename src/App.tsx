@@ -25,9 +25,9 @@ export const App = (props: AppPropsType) => {
                 <Nav/>
 
                 <div className="app-wrapper-content">
-                    <Route path='/dialogs' render={() => <Dialogs dialogsData={props.dialogsData}
-                                                                  messageItemData={props.messageItemData}/>}/>
-                    <Route path='/profile' render={() => <Profile postsData={props.postsData}/>}/>
+                    <Route path='/dialogs' render={() => <Dialogs dialogsData={props.state.dialogsPage.dialogsData}
+                                                                  messageItemData={props.state.dialogsPage.messageItemData}/>}/>
+                    <Route path='/profile' render={() => <Profile postsData={props.state.profilePage.postsData}/>}/>
 
                 </div>
             </div>
