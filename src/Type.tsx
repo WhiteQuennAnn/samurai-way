@@ -1,23 +1,20 @@
 
+
 export type StateType = {
-    state:{
-        profilePage: Array<OnePostTypeProps>
-        dialogsPage: {
-            messageItemData: Array<OneMessageItemDataProps>
-            dialogsData: Array<OneDialogsDataPropsType>
-        }
+state: {
+    profilePage: {
+        postData: OnePostTypeProps[]
     }
+    dialogsPage: {
+        messageItemData: OneMessageItemDataProps[]
+        dialogsData: OneDialogsDataPropsType[]
+    }
+}
     // profilePage: Array<OnePostTypeProps>
     // dialogsPage: {
     //     messageItemData: Array<OneMessageItemDataProps>
     //     dialogsData: Array<OneDialogsDataPropsType>
     // }
-}
-
-export type AppPropsType = {
-    dialogsData: Array<OneDialogsDataPropsType>
-    messageItemData: Array<OneMessageItemDataProps>
-    postsData: Array<OnePostTypeProps>
 }
 
 export type Global = {

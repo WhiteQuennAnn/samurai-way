@@ -33,10 +33,10 @@ export const Dialogs = (props: Global) => {
     //     {id: 3, message: "Buy"}
     // ]
 
-    let dialogsElements = props.
+    let dialogsElements = props.dialogsPage.dialogsData
         .map(d => <DialogItem name={d.name} id={d.id}/>);
 
-    let messagesElenents = props.state.messageItemData
+    let messagesElenents = props. dialogsPage.messageItemData
         .map(m => <MessageItem message={m.message}/>)
     return (
 

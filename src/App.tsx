@@ -14,7 +14,7 @@ import {StateType} from "./Type";
 //     postsData: Array<OnePostTypeProps>
 // }
 
-export const App = (props: StateType) => {
+export const App = (props: any) => {
     // let postsData = [
     //     {id: 1, message: "Hey how are you", likesCount: 22},
     //     {id: 2, message: "its my first post", likesCount: 65}
@@ -26,7 +26,7 @@ export const App = (props: StateType) => {
                 <Nav/>
 
                 <div className="app-wrapper-content">
-                    <Route path='/dialogs' render={() => <Dialogs dialogsData={props.state.dialogsPage}
+                    <Route path='/dialogs' render={() => <Dialogs  dialogsPage={props.state.dialogsPage}
                                                                  />}/>
                     <Route path='/profile' render={() => <Profile state={props.state.profilePage}/>}/>
 

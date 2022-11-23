@@ -1,6 +1,6 @@
 import React from 'react';
-import {OnePostTypeProps} from "../components/Profile/My posts/MyPosts";
-import {OneDialogsDataPropsType, OneMessageItemDataProps} from "../components/Dialogs/Dialogs";
+// import {OnePostTypeProps} from "../components/Profile/My posts/MyPosts";
+// import {OneDialogsDataPropsType, OneMessageItemDataProps} from "../components/Dialogs/Dialogs";
 
 // export type StateType = {
 //     profilePage: Array<OnePostTypeProps>
@@ -10,7 +10,7 @@ import {OneDialogsDataPropsType, OneMessageItemDataProps} from "../components/Di
 //     }
 // }
 
-let state = {
+const state = {
     profilePage: {
         postsData: [
             {id: 1, message: "Hey how are you", likesCount: 22},

@@ -20,6 +20,7 @@ import state from './redux/state';
 //     {id: 2, message: "its my first post", likesCount: 65}
 //
 // ]
+
 ReactDOM.render(
     <App state={state}/>,
     document.getElementById('root')
