@@ -3,16 +3,16 @@ import s from './Dialogs.module.css';
 import {DialogItem} from "./DialogItem/DialogsItem";
 import {MessageItem} from "./Message/Message";
 
-type Global = {
+export type Global = {
     dialogsData: Array<OneDialogsDataPropsType>
     messageItemData: Array<OneMessageItemDataProps>
 }
-type OneDialogsDataPropsType = {
+export type OneDialogsDataPropsType = {
     id: number
     name: string
 }
 
-type OneMessageItemDataProps = {
+export type OneMessageItemDataProps = {
     id: number
     message: string
 }

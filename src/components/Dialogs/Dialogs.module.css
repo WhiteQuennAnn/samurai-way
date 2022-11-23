@@ -1,20 +1,40 @@
-.dialogs {
-display: grid;
+/*.dialogs {*/
+/*display: grid;*/
+/*    grid-template-columns: 2fr 10fr;*/
+/*}*/
+/*.dialogsItems {*/
+/*    padding: 10px;*/
+/*    color: antiquewhite;*/
+
+/*}.dialogs .active {*/
+/*     color: blueviolet;*/
+
+/* }*/
+
+/*.messages {*/
+/*    padding: 10px;*/
+/*}*/
+
+/*.messages .message {*/
+/*color: brown;*/
+/*}*/
+.dialogs{
+    display: grid;
     grid-template-columns: 2fr 10fr;
 }
-.dialogsItems {
+.dialogsItems{
     padding: 10px;
-    color: antiquewhite;
 
-}.dialogs .active {
-     color: blueviolet;
+}
+.dialog{
 
- }
-
-.messages {
+}
+.active{
+    color: gold;
+}
+.messages{
     padding: 10px;
 }
+.message{
 
-.messages .message {
-color: brown;
 }
