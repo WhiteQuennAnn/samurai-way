@@ -26,9 +26,11 @@ export const MyPosts = (props: MyPostsTypeProps) => {
 
     let newPostElement = React.createRef<HTMLTextAreaElement>();
 
-    let addPost = (newPostElement: string) => {
-       props.addPost(newPostElement.current?.value)
-
+    let addPost = () => {
+        let postMessage = newPostElement.current?.value
+        if (postMessage) {
+            props.addPost(postMessage)
+        }
     }
 
     return (

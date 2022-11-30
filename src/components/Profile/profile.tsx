@@ -4,6 +4,7 @@ import {MyPosts} from "./My posts/MyPosts";
 import {ProfileInfo} from "./ProfileInfo/profileInfo";
 import {ProfilePropsType} from "../../App";
 
+
 export const Profile = (props: ProfilePropsType) => {
     // let postsData = [
     //     {id: 1, message: "Hey how are you", likesCount: 22},

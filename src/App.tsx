@@ -35,7 +35,7 @@ export const App = (props: ProfilePropsType) => {
                     <Route path='/dialogs' render={() => <Dialogs dialogsPage={props.state.dialogsPage}
                     />}/>
                     <Route path='/profile' render={() => <Profile
-                        state={props.state.profilePage.postsData}
+                        state={props.state}
 
                         addPost={addPost}></Profile>}/>
 
