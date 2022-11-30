@@ -6,6 +6,7 @@ import {Profile} from "./components/Profile/profile";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 import {StateType} from "./Type";
+import {addPost} from "./redux/state";
 
 
 // export type AppPropsType = {
@@ -13,8 +14,13 @@ import {StateType} from "./Type";
 //     messageItemData: Array<OneMessageItemDataProps>
 //     postsData: Array<OnePostTypeProps>
 // }
+export type ProfilePropsType = {
+    state: StateType
+    addPost: (postMessage: string) => void
+}
 
-export const App = (props: StateType) => {
+
+export const App = (props: ProfilePropsType) => {
     // let postsData = [
     //     {id: 1, message: "Hey how are you", likesCount: 22},
     //     {id: 2, message: "its my first post", likesCount: 65}
@@ -26,9 +32,12 @@ export const App = (props: StateType) => {
                 <Nav/>
 
                 <div className="app-wrapper-content">
-                    <Route path='/dialogs' render={() => <Dialogs  dialogsPage={props.state.dialogsPage}
-                                                                 />}/>
-                    <Route path='/profile' render={() => <Profile state={props.state.profilePage}/>}/>
+                    <Route path='/dialogs' render={() => <Dialogs dialogsPage={props.state.dialogsPage}
+                    />}/>
+                    <Route path='/profile' render={() => <Profile
+                        state={props.state.profilePage.postsData}
+
+                        addPost={addPost}></Profile>}/>
 
                 </div>
             </div>

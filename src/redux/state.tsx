@@ -1,4 +1,5 @@
 import React from 'react';
+import {OnePostTypeProps} from "../Type";
 // import {OnePostTypeProps} from "../components/Profile/My posts/MyPosts";
 // import {OneDialogsDataPropsType, OneMessageItemDataProps} from "../components/Dialogs/Dialogs";
 
@@ -31,8 +32,8 @@ const state = {
 }
 
 
-export let addPost = (postMessage) => {
-    let newPost = {
+export const addPost = (postMessage: string) => {
+   const newPost: OnePostTypeProps = {
         id: 5,
         message: postMessage,
         likesCount: 94

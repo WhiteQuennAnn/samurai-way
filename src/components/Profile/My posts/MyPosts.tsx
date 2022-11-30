@@ -2,6 +2,7 @@ import React from 'react';
 import s from "./MyPosts.module.css";
 import {Post} from "./Post/Post";
 import {OnePostTypeProps} from "../../../Type";
+import {ProfilePropsType} from "../../../App";
 
 
 // export type OnePostTypeProps = {
@@ -11,6 +12,7 @@ import {OnePostTypeProps} from "../../../Type";
 // }
 type MyPostsTypeProps = {
     postsData: Array<OnePostTypeProps>
+    addPost: (postMessage: string) => void
 }
 
 
@@ -24,8 +26,8 @@ export const MyPosts = (props: MyPostsTypeProps) => {
 
     let newPostElement = React.createRef<HTMLTextAreaElement>();
 
-    let addPost = () => {
-        alert(newPostElement.current?.value)
+    let addPost = (newPostElement: string) => {
+       props.addPost(newPostElement.current?.value)
 
     }
 

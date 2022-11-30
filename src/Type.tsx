@@ -1,15 +1,15 @@
-
-
 export type StateType = {
-    state: {
+
         profilePage: {
             postsData: OnePostTypeProps[]
         }
         dialogsPage: {
             messageItemData: OneMessageItemDataProps[]
             dialogsData: OneDialogsDataPropsType[]
-        }
+
     }
+    // addPost: (postMessage: string) => void
+
     // profilePage: Array<OnePostTypeProps>
     // dialogsPage: {
     //     messageItemData: Array<OneMessageItemDataProps>

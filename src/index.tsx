@@ -4,6 +4,7 @@ import './index.css';
 import {App} from './App';
 import state from './redux/state';
 import {addPost} from './redux/state';
+
 // let dialogsData = [
 //     {id: 1, name: "Anya"},
 //     {id: 2, name: "Dima"},
@@ -22,9 +23,10 @@ import {addPost} from './redux/state';
 //
 // ]
 
-addPost('Samurai')
+// addPost('Samurai')
 
+// @ts-ignore
 ReactDOM.render(
-    <App state={state}/>,
+    <App state={state} addPost={addPost}/>,
     document.getElementById('root')
 );
