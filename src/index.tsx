@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import {App} from './App';
 import state from './redux/state';
+import {addPost} from './redux/state';
 // let dialogsData = [
 //     {id: 1, name: "Anya"},
 //     {id: 2, name: "Dima"},
@@ -20,6 +21,8 @@ import state from './redux/state';
 //     {id: 2, message: "its my first post", likesCount: 65}
 //
 // ]
+
+addPost('Samurai')
 
 ReactDOM.render(
     <App state={state}/>,
