@@ -19,14 +19,21 @@ export const MyPosts = (props: MyPostsTypeProps) => {
     //     {id: 1, message: "Hey how are you", likesCount: 22},
     //     {id: 2, message: "its my first post", likesCount: 65}
     // ]
+
     let postsElements = props.postsData.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
+
+   let addPost = () => {
+        alert('heewefwvesdvbesbv')
+    }
+
     return (
         <div className={s.postsBlock}>
             <h3> My posts</h3>
             <div>
                 <div><textarea></textarea></div>
                 <div>
-                    <button onClick={ () => { alert('heeeeeeeeeeey')}}> Add post</button>
+                    <button onClick={ addPost }> Add post
+                    </button>
                 </div>
             </div>
 
