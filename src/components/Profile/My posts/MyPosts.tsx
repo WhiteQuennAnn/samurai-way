@@ -26,7 +26,7 @@ export const MyPosts = (props: MyPostsTypeProps) => {
             <div>
                 <div><textarea></textarea></div>
                 <div>
-                    <button> Add post</button>
+                    <button onClick={ () => { alert('heeeeeeeeeeey')}}> Add post</button>
                 </div>
             </div>
 
