@@ -1,5 +1,6 @@
 import React from 'react';
 import {OnePostTypeProps} from "../Type";
+import {rerenderEntireTree} from "../render";
 // import {OnePostTypeProps} from "../components/Profile/My posts/MyPosts";
 // import {OneDialogsDataPropsType, OneMessageItemDataProps} from "../components/Dialogs/Dialogs";
 
@@ -39,5 +40,6 @@ export const addPost = (postMessage: string) => {
     };
 
     state.profilePage.postsData.push(newPost)
+    rerenderEntireTree(state);
 }
 export default state;
