@@ -21,10 +21,7 @@ export type ProfilePropsType = {
 
 
 export const App = (props: ProfilePropsType) => {
-    // let postsData = [
-    //     {id: 1, message: "Hey how are you", likesCount: 22},
-    //     {id: 2, message: "its my first post", likesCount: 65}
-    // ]
+
     return (
         <BrowserRouter>
             <div className="app-wrapper">
