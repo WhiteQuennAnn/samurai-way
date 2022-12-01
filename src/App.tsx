@@ -19,7 +19,6 @@ export type ProfilePropsType = {
     addPost: (postMessage: string) => void
 }
 
-
 export const App = (props: ProfilePropsType) => {
 
     return (

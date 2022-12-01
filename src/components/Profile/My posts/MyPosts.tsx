@@ -30,6 +30,7 @@ export const MyPosts = (props: MyPostsTypeProps) => {
         if (postMessage) {
             props.addPost(postMessage)
         }
+
     }
 
     return (
