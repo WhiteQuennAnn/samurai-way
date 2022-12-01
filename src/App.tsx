@@ -34,7 +34,7 @@ export const App = (props: ProfilePropsType) => {
                     <Route path='/profile' render={() => <Profile
                         state={props.state}
 
-                        addPost={addPost}></Profile>}/>
+                        addPost={props.addPost}></Profile>}/>
 
                 </div>
             </div>

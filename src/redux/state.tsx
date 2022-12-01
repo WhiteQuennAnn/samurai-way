@@ -31,10 +31,9 @@ const state = {
     }
 }
 
-
 export const addPost = (postMessage: string) => {
    const newPost: OnePostTypeProps = {
-        id: 5,
+        id: new Date().getTime(),
         message: postMessage,
         likesCount: 94
     };

@@ -15,7 +15,6 @@ type MyPostsTypeProps = {
     addPost: (postMessage: string) => void
 }
 
-
 export const MyPosts = (props: MyPostsTypeProps) => {
     // let postsData = [
     //     {id: 1, message: "Hey how are you", likesCount: 22},
@@ -35,7 +34,7 @@ export const MyPosts = (props: MyPostsTypeProps) => {
 
     return (
         <div className={s.postsBlock}>
-            <h3> My posts</h3>
+            <h3> My posts </h3>
             <div>
                 <div><textarea ref={newPostElement}></textarea></div>
                 <div>
