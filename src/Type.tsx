@@ -8,13 +8,6 @@ export type StateType = {
             dialogsData: OneDialogsDataPropsType[]
 
     }
-    // addPost: (postMessage: string) => void
-
-    // profilePage: Array<OnePostTypeProps>
-    // dialogsPage: {
-    //     messageItemData: Array<OneMessageItemDataProps>
-    //     dialogsData: Array<OneDialogsDataPropsType>
-    // }
 }
 
 export type Global = {

@@ -10,7 +10,7 @@ import {ProfilePropsType} from "../../../App";
 //     message: string
 //     likesCount: number
 // }
-type MyPostsTypeProps = {
+export type MyPostsTypeProps = {
     postsData: Array<OnePostTypeProps>
     addPost: (postMessage: string) => void
 }
