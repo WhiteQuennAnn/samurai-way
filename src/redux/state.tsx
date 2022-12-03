@@ -1,16 +1,6 @@
 import React from 'react';
 import {OnePostTypeProps} from "../Type";
 import {rerenderEntireTree} from "../render";
-// import {OnePostTypeProps} from "../components/Profile/My posts/MyPosts";
-// import {OneDialogsDataPropsType, OneMessageItemDataProps} from "../components/Dialogs/Dialogs";
-
-// export type StateType = {
-//     profilePage: Array<OnePostTypeProps>
-//     dialogsPage: {
-//         messageItemData: Array<OneMessageItemDataProps>
-//         dialogsData: Array<OneDialogsDataPropsType>
-//     }
-// }
 
 const state = {
     profilePage: {
