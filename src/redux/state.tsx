@@ -29,8 +29,13 @@ export const addPost = (postMessage: string) => {
         message: postMessage,
         likesCount: 94
     };
-
     state.profilePage.postsData.push(newPost)
+    rerenderEntireTree(state);
+}
+
+export const updateNewPostText = (newText: string) => {
+
+    state.profilePage. newPostText = newText;
     rerenderEntireTree(state);
 }
 export default state;
