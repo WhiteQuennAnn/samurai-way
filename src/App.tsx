@@ -18,6 +18,7 @@ export type ProfilePropsType = {
     state: StateType
     addPost: (postMessage: string) => void
     newPostText: string
+    updateNewPostText: (newText: string) => void
 }
 
 export const App = (props: ProfilePropsType) => {
@@ -34,7 +35,9 @@ export const App = (props: ProfilePropsType) => {
                     <Route path='/profile' render={() => <Profile
                         state={props.state}
                         addPost={props.addPost}
-                        newPostText={props.state.profilePage.newPostText}></Profile>}
+                        newPostText={props.state.profilePage.newPostText}
+                        updateNewPostText={props.updateNewPostText}
+                    ></Profile>}
 
                     />
 
