@@ -34,7 +34,8 @@ export const MyPosts = (props: MyPostsTypeProps) => {
 
     }
     let onPostChange = () => {
-
+        let text = newPostElement.current?.value
+        console.log(text)
     }
 
     return (
