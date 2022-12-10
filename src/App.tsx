@@ -17,6 +17,7 @@ import {addPost} from "./redux/state";
 export type ProfilePropsType = {
     state: StateType
     addPost: (postMessage: string) => void
+    newPostText: string
 }
 
 export const App = (props: ProfilePropsType) => {
@@ -32,8 +33,10 @@ export const App = (props: ProfilePropsType) => {
                     />}/>
                     <Route path='/profile' render={() => <Profile
                         state={props.state}
+                        addPost={props.addPost}
+                        newPostText={props.state.profilePage.newPostText}></Profile>}
 
-                        addPost={props.addPost}></Profile>}/>
+                    />
 
                 </div>
             </div>

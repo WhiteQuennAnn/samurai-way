@@ -1,7 +1,8 @@
 export type StateType = {
 
     profilePage: {
-        postsData: OnePostTypeProps[]
+        postsData: OnePostTypeProps[],
+        newPostText: string
     }
     dialogsPage: {
         messageItemData: OneMessageItemDataProps[]

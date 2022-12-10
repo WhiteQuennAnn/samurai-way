@@ -6,7 +6,8 @@ const state = {
     profilePage: {
         postsData: [
             {id: 1, message: "Hey how are you", likesCount: 22},
-            {id: 2, message: "its my first post", likesCount: 65}]
+            {id: 2, message: "its my first post", likesCount: 65}],
+        newPostText: "Anna"
     },
     dialogsPage: {
         messageItemData: [
@@ -23,7 +24,7 @@ const state = {
 }
 
 export const addPost = (postMessage: string) => {
-   const newPost: OnePostTypeProps = {
+    const newPost: OnePostTypeProps = {
         id: new Date().getTime(),
         message: postMessage,
         likesCount: 94

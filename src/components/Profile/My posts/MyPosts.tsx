@@ -13,6 +13,7 @@ import {ProfilePropsType} from "../../../App";
 export type MyPostsTypeProps = {
     postsData: Array<OnePostTypeProps>
     addPost: (postMessage: string) => void
+    newPostText: string
 }
 
 export const MyPosts = (props: MyPostsTypeProps) => {
@@ -42,7 +43,7 @@ export const MyPosts = (props: MyPostsTypeProps) => {
             <div>
                 <div><textarea onChange={onPostChange}
                                ref={newPostElement}
-                               value={"Anna"}/></div>
+                               value={props.newPostText}/></div>
                 <div>
                     <button onClick={addPost}> Add post
                     </button>
