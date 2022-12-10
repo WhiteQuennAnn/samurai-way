@@ -32,12 +32,15 @@ export const MyPosts = (props: MyPostsTypeProps) => {
         }
 
     }
+    let onPostChange = () => {
+
+    }
 
     return (
         <div className={s.postsBlock}>
             <h3> My posts </h3>
             <div>
-                <div><textarea ref={newPostElement}></textarea></div>
+                <div><textarea ref={newPostElement} value={"Anna"}/></div>
                 <div>
                     <button onClick={addPost}> Add post
                     </button>
