@@ -31,7 +31,7 @@ export const MyPosts = (props: MyPostsTypeProps) => {
         let postMessage = newPostElement.current?.value
         if (postMessage) {
             props.addPost(postMessage)
-            props.updateNewPostText(" ")
+
         }
 
     }

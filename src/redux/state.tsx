@@ -30,11 +30,11 @@ export const addPost = (postMessage: string) => {
         likesCount: 94
     };
     state.profilePage.postsData.push(newPost)
+    state.profilePage.newPostText = ' '
     rerenderEntireTree(state);
 }
 
 export const updateNewPostText = (newText: string) => {
-
     state.profilePage. newPostText = newText;
     rerenderEntireTree(state);
 }
