@@ -1,7 +1,7 @@
 import React from 'react';
 import {OnePostTypeProps} from "../Type";
 
-let rerenderEntireTree = (state: any) => {
+let rerenderEntireTree = () => {
     console.log("State is changed")
 }
 
@@ -34,12 +34,12 @@ export const addPost = (postMessage: string) => {
     };
     state.profilePage.postsData.push(newPost)
     state.profilePage.newPostText = ' '
-    rerenderEntireTree(state);
+    rerenderEntireTree();
 }
 
 export const updateNewPostText = (newText: string) => {
     state.profilePage.newPostText = newText;
-    rerenderEntireTree(state);
+    rerenderEntireTree();
 }
 
 export const subscribe = (observer: any) => {
