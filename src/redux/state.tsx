@@ -42,7 +42,7 @@ export const updateNewPostText = (newText: string) => {
     rerenderEntireTree(state);
 }
 
-export const subscribe = (observer) =>{
+export const subscribe = (observer: any) =>{
 
 }
 
