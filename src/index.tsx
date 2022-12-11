@@ -5,9 +5,10 @@ import state, {addPost, updateNewPostText} from "./redux/state";
 import {StateType} from "./Type";
 import ReactDOM from "react-dom";
 import {App} from "./App";
-export let rerenderEntireTree = (state: StateType) => {
+
+let rerenderEntireTree = (state: StateType) => {
     ReactDOM.render(
-        <App state={state} addPost={addPost} newPostText={"newPostText"} updateNewPostText={ updateNewPostText}/>,
+        <App state={state} addPost={addPost} newPostText={"newPostText"} updateNewPostText={updateNewPostText}/>,
         document.getElementById('root')
     );
 }

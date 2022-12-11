@@ -1,8 +1,11 @@
 import React from 'react';
 import {OnePostTypeProps} from "../Type";
-import {rerenderEntireTree} from "../render";
 
-const state = {
+let rerenderEntireTree = (state: any) => {
+    console.log("State is changed")
+}
+
+let state = {
     profilePage: {
         postsData: [
             {id: 1, message: "Hey how are you", likesCount: 22},
@@ -38,4 +41,9 @@ export const updateNewPostText = (newText: string) => {
     state.profilePage. newPostText = newText;
     rerenderEntireTree(state);
 }
+
+export const subscribe = (observer) =>{
+
+}
+
 export default state;

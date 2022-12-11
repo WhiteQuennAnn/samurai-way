@@ -14,7 +14,7 @@ export type MyPostsTypeProps = {
     postsData: Array<OnePostTypeProps>
     addPost: (postMessage: string) => void
     newPostText: string
-    updateNewPostText: (newText: string)=> void
+    updateNewPostText: (newText: string) => void
 }
 
 export const MyPosts = (props: MyPostsTypeProps) => {
@@ -36,9 +36,11 @@ export const MyPosts = (props: MyPostsTypeProps) => {
 
     }
     let onPostChange = () => {
-        // @ts-ignore
-        let postMessage = newPostElement.current.value
-        props.updateNewPostText(postMessage)
+
+        let postMessage = newPostElement.current?.value
+        if (postMessage) {
+            props.updateNewPostText(postMessage)
+        }
     }
 
     return (
