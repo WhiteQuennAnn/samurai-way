@@ -6,13 +6,13 @@ import {StateType} from "./Type";
 import ReactDOM from "react-dom";
 import {App} from "./App";
 
-let rerenderEntireTree = (state: StateType) => {
+let rerenderEntireTree = () => {
     ReactDOM.render(
         <App state={state} addPost={addPost} newPostText={"newPostText"} updateNewPostText={updateNewPostText}/>,
         document.getElementById('root')
     );
 }
-rerenderEntireTree(state);
+rerenderEntireTree();
 
 subscribe(rerenderEntireTree);
 
