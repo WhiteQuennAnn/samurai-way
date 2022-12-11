@@ -14,6 +14,6 @@ let rerenderEntireTree = (state: StateType) => {
 }
 rerenderEntireTree(state);
 
-subscribe(rerenderEntireTree );
+subscribe(rerenderEntireTree);
 
 

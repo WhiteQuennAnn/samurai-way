@@ -38,12 +38,12 @@ export const addPost = (postMessage: string) => {
 }
 
 export const updateNewPostText = (newText: string) => {
-    state.profilePage. newPostText = newText;
+    state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
 }
 
-export const subscribe = (observer: any) =>{
-
+export const subscribe = (observer: any) => {
+    rerenderEntireTree = observer; // наблюдатель
 }
 
 export default state;
