@@ -30,7 +30,8 @@ export const MyPosts = (props: MyPostsTypeProps) => {
     let addPost = () => {
         let postMessage = newPostElement.current?.value
         if (postMessage) {
-            props.addPost(postMessage)
+            //props.addPost(postMessage)
+            props.dispatch( {'ADD-POST' })
 
         }
 
@@ -39,7 +40,8 @@ export const MyPosts = (props: MyPostsTypeProps) => {
 
         let postMessage = newPostElement.current?.value
         if (postMessage) {
-            props.updateNewPostText(postMessage)
+           // props.updateNewPostText(postMessage)
+            props.dispatch({  'UPDATE-NEW-POST-TEXT', newText: postMessage})
         }
     }
 
