@@ -3,11 +3,12 @@ import {OnePostTypeProps, StateType} from "../Type";
 
 export type StoreType = {
     _state: StateType
+    _onChange: () => void
     updateNewPostText: (newText: string) => void
     addPost: (postMessage: string) => void
     subscribe: (callback: () => void) => void
-    _onChange: ()=>void
-    getState:() => StateType
+
+    getState: () => StateType
 
 }
 
@@ -32,6 +33,13 @@ let store: StoreType = {
             ],
         }
     },
+    _onChange() {
+        console.log("state changed")
+    },
+
+    subscribe(callback) {
+        this._onChange = callback; // наблюдатель
+    },
     getState() {
         return this._state
     },
@@ -40,29 +48,41 @@ let store: StoreType = {
     //     console.log('State changed')
     // },
 
-    addPost(postMessage: string) {
-        const newPost: OnePostTypeProps = {
-            id: new Date().getTime(),
-            message: postMessage,
-            likesCount: 94
-        };
-        this._state.profilePage.postsData.push(newPost)
-        this._state.profilePage.newPostText = ' '
-        this._onChange();
+    // addPost(postMessage: string) {
+    // const newPost: OnePostTypeProps = {
+    //     id: new Date().getTime(),
+    //     message: postMessage,
+    //     likesCount: 94
+    // };
+    // this._state.profilePage.postsData.push(newPost)
+    // this._state.profilePage.newPostText = ' '
+    // this._onChange();
+    // }
+    // ,
+    // updateNewPostText(newText: string) {
+    //     this._state.profilePage.newPostText = newText;
+    //     this._onChange();
+    // },
+
+    dispatch(action) { //{ type: 'ADD-POST'}
+        if (action.type === 'ADD-POST') {
+            const newPost: OnePostTypeProps = {
+                id: new Date().getTime(),
+                message: postMessage,
+                likesCount: 94
+            };
+            this._state.profilePage.postsData.push(newPost)
+            this._state.profilePage.newPostText = ' '
+            this._onChange();
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = newText;
+            this._onChange();
+        }
     }
-    ,
-    updateNewPostText(newText: string) {
-        this._state.profilePage.newPostText = newText;
-        this._onChange();
-    },
-    _onChange() {
-        console.log("state changed")
-    },
-    subscribe(callback) {
-        this._onChange = callback; // наблюдатель
-    }
+
+
 }
- export default store;
+export default store;
 
 
 //window.store = store;
