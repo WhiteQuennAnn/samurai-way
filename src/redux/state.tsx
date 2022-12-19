@@ -22,6 +22,10 @@ let store = {
             ],
         }
     },
+    getState() {
+        return _state;
+    },
+
     rerenderEntireTree() {
         console.log("State is changed")
     },
