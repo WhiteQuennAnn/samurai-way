@@ -11,7 +11,7 @@ export type StoreType = {
 
 }
 
- export let store: StoreType = {
+let store: StoreType = {
     _state: {
         profilePage: {
             postsData: [
@@ -62,7 +62,7 @@ export type StoreType = {
         this._onChange = callback; // наблюдатель
     }
 }
-
+ export default store;
 
 
 //window.store = store;

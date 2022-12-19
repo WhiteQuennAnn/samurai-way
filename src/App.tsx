@@ -6,6 +6,7 @@ import {Profile} from "./components/Profile/profile";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 import {StateType} from "./Type";
+import store, {StoreType} from "./redux/state";
 
 // export type AppPropsType = {
 //     dialogsData: Array<OneDialogsDataPropsType>
@@ -17,16 +18,19 @@ export type ProfilePropsType = {
     addPost: (postMessage: string) => void
     newPostText: string
     updateNewPostText: (newText: string) => void
+
+}
+type PropsType = {
+    store: StoreType
 }
 
-export const App = (props: ProfilePropsType) => {
-
+export const App: React.FC<PropsType & ProfilePropsType> = (props) => {
+    const state = props.store.getState()
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
                 <Nav/>
-
                 <div className="app-wrapper-content">
                     <Route path='/dialogs' render={() => <Dialogs dialogsPage={props.state.dialogsPage}
                     />}/>
