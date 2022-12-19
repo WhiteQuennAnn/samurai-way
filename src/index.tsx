@@ -7,9 +7,9 @@ import {StateType} from "./Type";
 
 let rerenderEntireTree = (state:StateType) => {
     ReactDOM.render(
-        <App state={state} addPost={store.addPost.bind(store)}
-             newPostText={"newPostText"}
-             updateNewPostText={store.updateNewPostText.bind(store)} store={store}/>,
+        <App state={state} dispatch={store.dispatch.bind(store)}
+
+            />,
         document.getElementById('root')
     );
 }

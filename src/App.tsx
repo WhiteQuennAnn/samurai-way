@@ -15,9 +15,9 @@ import store, {StoreType} from "./redux/state";
 // }
 export type ProfilePropsType = {
     state: StateType
-    addPost: (postMessage: string) => void
+    dispatch: (postMessage: string) => void
     newPostText: string
-    updateNewPostText: (newText: string) => void
+
 
 }
 type PropsType = {
@@ -36,9 +36,8 @@ export const App: React.FC<PropsType & ProfilePropsType> = (props) => {
                     />}/>
                     <Route path='/profile' render={() => <Profile
                         state={props.state}
-                        addPost={props.store.addPost.bind(props.store)}
+                        dispatch={props.dispatch}
                         newPostText={props.state.profilePage.newPostText}
-                        updateNewPostText={props.store.updateNewPostText.bind(props.store)}
                     ></Profile>}
 
                     />
