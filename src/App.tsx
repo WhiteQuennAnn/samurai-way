@@ -6,8 +6,6 @@ import {Profile} from "./components/Profile/profile";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 import {StateType} from "./Type";
-import {addPost} from "./redux/state";
-
 
 // export type AppPropsType = {
 //     dialogsData: Array<OneDialogsDataPropsType>

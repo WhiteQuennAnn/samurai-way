@@ -1,7 +1,17 @@
 import React from 'react';
-import {OnePostTypeProps} from "../Type";
+import {OnePostTypeProps, StateType} from "../Type";
 
-let store = {
+export type StoreType = {
+    _state: StateType
+    updateNewPostText: (newText: string) => void
+    addPost: (postMessage: string) => void
+    subscribe: (callback: () => void) => void
+    _onChange: ()=>void
+    getState:() => StateType
+
+}
+
+ export let store: StoreType = {
     _state: {
         profilePage: {
             postsData: [
@@ -23,31 +33,37 @@ let store = {
         }
     },
     getState() {
-        return _state;
+        return this._state
     },
 
-    rerenderEntireTree() {
-        console.log("State is changed")
-    },
+    // _callSubscriber() {
+    //     console.log('State changed')
+    // },
+
     addPost(postMessage: string) {
         const newPost: OnePostTypeProps = {
             id: new Date().getTime(),
             message: postMessage,
             likesCount: 94
         };
-        state.profilePage.postsData.push(newPost)
-        state.profilePage.newPostText = ' '
-        rerenderEntireTree();
-    },
+        this._state.profilePage.postsData.push(newPost)
+        this._state.profilePage.newPostText = ' '
+        this._onChange();
+    }
+    ,
     updateNewPostText(newText: string) {
-        state.profilePage.newPostText = newText;
-        rerenderEntireTree();
+        this._state.profilePage.newPostText = newText;
+        this._onChange();
     },
-    subscribe(observer: () => void) {
-        rerenderEntireTree = observer; // наблюдатель
+    _onChange() {
+        console.log("state changed")
+    },
+    subscribe(callback) {
+        this._onChange = callback; // наблюдатель
     }
 }
 
 
-export default store;
-// window.store = store;
+
+//window.store = store;
+
