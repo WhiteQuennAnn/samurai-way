@@ -64,7 +64,7 @@ let store: StoreType = {
     //     this._onChange();
     // },
 
-    dispatch(action) { //{ type: 'ADD-POST'}
+    dispatch(action: string) { //{ type: 'ADD-POST'}
         if (action.type === 'ADD-POST') {
             const newPost: OnePostTypeProps = {
                 id: new Date().getTime(),
@@ -75,7 +75,7 @@ let store: StoreType = {
             this._state.profilePage.newPostText = ' '
             this._onChange();
         } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._state.profilePage.newPostText = newText;
+            this._state.profilePage.newPostText = action.newText;
             this._onChange();
         }
     }
