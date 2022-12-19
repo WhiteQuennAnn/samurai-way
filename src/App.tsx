@@ -36,9 +36,9 @@ export const App: React.FC<PropsType & ProfilePropsType> = (props) => {
                     />}/>
                     <Route path='/profile' render={() => <Profile
                         state={props.state}
-                        addPost={props.addPost}
+                        addPost={props.store.addPost.bind(props.store)}
                         newPostText={props.state.profilePage.newPostText}
-                        updateNewPostText={props.updateNewPostText}
+                        updateNewPostText={props.store.updateNewPostText.bind(props.store)}
                     ></Profile>}
 
                     />
