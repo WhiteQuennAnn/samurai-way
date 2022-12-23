@@ -17,14 +17,14 @@ export type ProfilePropsType = {
     state: StateType
     dispatch: (action: AddPostActionType| ChangeNewTextActionType) => void
     newPostText: string
-
-
 }
+type AllType = PropsType| ProfilePropsType;
+
 type PropsType = {
     store: StoreType
 }
 
-export const App: React.FC<PropsType & ProfilePropsType> = (props) => {
+export const App: React.FC<any> = (props) => {
     const state = props.store.getState()
     return (
         <BrowserRouter>

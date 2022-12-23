@@ -7,8 +7,7 @@ import {StateType} from "./Type";
 
 let rerenderEntireTree = (state:StateType) => {
     ReactDOM.render(
-        <App state={state} c={store.dispatch.bind(store)}
-
+        <App state={state} dispatch={store.dispatch.bind(store)}
             />,
         document.getElementById('root')
     );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import s from "./MyPosts.module.css";
 import {Post} from "./Post/Post";
 import {OnePostTypeProps} from "../../../Type";
@@ -13,9 +13,9 @@ import {AddPostActionType, ChangeNewTextActionType} from "../../../redux/state";
 // }
 export type MyPostsTypeProps = {
     postsData: Array<OnePostTypeProps>
-    addPost: (postMessage: string) => void
+    // addPost: (postMessage: string) => void
     newPostText: string
-    updateNewPostText: (newText: string) => void
+    // updateNewPostText: (newText: string) => void
     dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
 }
 
@@ -31,19 +31,16 @@ export const MyPosts = (props: MyPostsTypeProps) => {
 
     let addPost = () => {
         let postMessage = newPostElement.current?.value
-        if (postMessage) {
-            //props.addPost(postMessage)
-            props.dispatch({type: 'UPDATE-NEW-POST-TEXT'})
-        }
+        //props.addPost(postMessage)
+
+        postMessage && props.dispatch({type: 'ADD-POST', postMessage})
 
     }
-    let onPostChange = () => {
-
+    let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         let postMessage = newPostElement.current?.value
         if (postMessage) {
             // props.updateNewPostText(postMessage)
-            let action = postMessage
-            props.dispatch({type: 'UPDATE-NEW-POST-TEXT'})
+            props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: e.currentTarget.value})
         }
     }
 

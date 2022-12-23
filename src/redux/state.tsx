@@ -4,8 +4,8 @@ import {OnePostTypeProps, StateType} from "../Type";
 export type StoreType = {
     _state: StateType
     _onChange: () => void
-    updateNewPostText: (newText: string) => void
-    addPost: (postMessage: string) => void
+    // updateNewPostText: (newText: string) => void
+    // addPost: (postMessage: string) => void
     subscribe: (callback: () => void) => void
     getState: () => StateType
     dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
@@ -15,10 +15,10 @@ export type AddPostActionType = {
     postMessage: string
 
 }
+
 export type ChangeNewTextActionType = {
     type: 'UPDATE-NEW-POST-TEXT'
     newText: string
-
 }
 
 let store: StoreType = {
@@ -73,8 +73,10 @@ let store: StoreType = {
     //     this._onChange();
     // },
 
-    dispatch(action: string) { //{ type: 'ADD-POST'}
+    dispatch(action: AddPostActionType | ChangeNewTextActionType) { //{ type: 'ADD-POST'}
+        debugger
         if (action.type === 'ADD-POST') {
+            debugger
             const newPost: OnePostTypeProps = {
                 id: new Date().getTime(),
                 message: action.postMessage,
