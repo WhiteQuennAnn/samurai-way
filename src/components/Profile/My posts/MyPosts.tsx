@@ -13,8 +13,9 @@ import {AddPostActionType, ChangeNewTextActionType} from "../../../redux/state";
 // }
 
 let addPostActionCreator = () => {
+
     return {
-        type: 'ADD-POST'
+        type: ADD_POST
 
     }
 }

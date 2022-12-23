@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import {OnePostTypeProps, StateType} from "../Type";
 
 export type StoreType = {
@@ -10,14 +10,18 @@ export type StoreType = {
     getState: () => StateType
     dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
 }
+
+
 export type AddPostActionType = {
     type: 'ADD-POST'
-   }
+}
 
 export type ChangeNewTextActionType = {
     type: 'UPDATE-NEW-POST-TEXT'
     newText: string
 }
+let ADD_POST = 'ADD-POST';
+let CHANGE_UPDATE_NEW_POST = 'UPDATE-NEW-POST-TEXT';
 
 let store: StoreType = {
     _state: {
@@ -71,6 +75,21 @@ let store: StoreType = {
     //     this._onChange();
     // },
 
+    export const addPostActionCreator = () => {
+        return {
+            type: ADD_POST
+
+        }
+    }
+
+    export  const updateNewPostActionCreator = (e: ChangeEvent<HTMLTextAreaElement>) => {
+
+        return {
+            type: CHANGE_UPDATE_NEW_POST,
+            newText: e.currentTarget.value
+
+        }
+    }
     dispatch(action: AddPostActionType | ChangeNewTextActionType) { //{ type: 'ADD-POST'}
         debugger
         if (action.type === 'ADD-POST') {
