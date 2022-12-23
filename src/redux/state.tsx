@@ -8,14 +8,14 @@ export type StoreType = {
     addPost: (postMessage: string) => void
     subscribe: (callback: () => void) => void
     getState: () => StateType
-    dispatch: (action: any) => void
+    dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
 }
-type AddPostActionType = {
+export type AddPostActionType = {
     type: 'ADD-POST'
     postMessage: string
 
 }
-type ChangeNewTextActionType = {
+export type ChangeNewTextActionType = {
     type: 'UPDATE-NEW-POST-TEXT'
     newText: string
 

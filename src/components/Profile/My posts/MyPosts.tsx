@@ -3,6 +3,7 @@ import s from "./MyPosts.module.css";
 import {Post} from "./Post/Post";
 import {OnePostTypeProps} from "../../../Type";
 import {ProfilePropsType} from "../../../App";
+import {AddPostActionType, ChangeNewTextActionType} from "../../../redux/state";
 
 
 // export type OnePostTypeProps = {
@@ -15,6 +16,7 @@ export type MyPostsTypeProps = {
     addPost: (postMessage: string) => void
     newPostText: string
     updateNewPostText: (newText: string) => void
+    dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
 }
 
 export const MyPosts = (props: MyPostsTypeProps) => {
@@ -31,8 +33,7 @@ export const MyPosts = (props: MyPostsTypeProps) => {
         let postMessage = newPostElement.current?.value
         if (postMessage) {
             //props.addPost(postMessage)
-            props.dispatch( {'ADD-POST' })
-
+            props.dispatch({type: 'UPDATE-NEW-POST-TEXT'})
         }
 
     }
@@ -40,9 +41,9 @@ export const MyPosts = (props: MyPostsTypeProps) => {
 
         let postMessage = newPostElement.current?.value
         if (postMessage) {
-           // props.updateNewPostText(postMessage)
+            // props.updateNewPostText(postMessage)
             let action = postMessage
-            props.dispatch(action)
+            props.dispatch({type: 'UPDATE-NEW-POST-TEXT'})
         }
     }
 

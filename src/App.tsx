@@ -6,7 +6,7 @@ import {Profile} from "./components/Profile/profile";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 import {StateType} from "./Type";
-import store, {StoreType} from "./redux/state";
+import store, {AddPostActionType, ChangeNewTextActionType, StoreType} from "./redux/state";
 
 // export type AppPropsType = {
 //     dialogsData: Array<OneDialogsDataPropsType>
@@ -15,7 +15,7 @@ import store, {StoreType} from "./redux/state";
 // }
 export type ProfilePropsType = {
     state: StateType
-    dispatch: (postMessage: string) => void
+    dispatch: (action: AddPostActionType| ChangeNewTextActionType) => void
     newPostText: string
 
 
