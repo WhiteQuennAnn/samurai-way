@@ -2,18 +2,12 @@ import React, {ChangeEvent} from 'react';
 import s from "./MyPosts.module.css";
 import {Post} from "./Post/Post";
 import {OnePostTypeProps} from "../../../Type";
-import {ProfilePropsType} from "../../../App";
 import {
     addPostActionCreator,
     AddPostActionType,
     ChangeNewTextActionType,
     updateNewPostActionCreator
 } from "../../../redux/state";
-// export type OnePostTypeProps = {
-//     id: number
-//     message: string
-//     likesCount: number
-// }
 
 export type MyPostsTypeProps = {
     postsData: Array<OnePostTypeProps>
@@ -30,7 +24,6 @@ export const MyPosts = (props: MyPostsTypeProps) => {
     // ]
 
     let postsElements = props.postsData.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
-
     let newPostElement = React.createRef<HTMLTextAreaElement>();
 
     let addPost = () => {
@@ -39,13 +32,12 @@ export const MyPosts = (props: MyPostsTypeProps) => {
         postMessage && props.dispatch(addPostActionCreator())
     }
     let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        if (postMessage) {
-            // props.updateNewPostText(postMessage)
-            props.dispatch(updateNewPostActionCreator(props.newPostText))
-        }
-    }
+        let text = e.currentTarget.value
 
-    return (
+        props.dispatch(updateNewPostActionCreator())
+
+    }
+     return (
         <div className={s.postsBlock}>
             <h3> My posts </h3>
             <div>
