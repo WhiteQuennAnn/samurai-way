@@ -79,6 +79,7 @@ export const updateNewPostActionCreator = (e: ChangeEvent<HTMLTextAreaElement>) 
 
 
     }
+    export default store;
 
 
 
