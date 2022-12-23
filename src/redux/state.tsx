@@ -82,6 +82,7 @@ export let store: StoreType = {
         } else if (action.type === 'SEND-MESSAGE') {
             let body = this._state.dialogsPage.newMessageBody;
             this._state.dialogsPage.newMessageBody = "";
+            this._state.dialogsPage.messageItemData.push(  {id: 4, message: body})
             this._onChange();
         }
     }
