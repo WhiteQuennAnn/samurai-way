@@ -12,9 +12,7 @@ export type StoreType = {
 }
 export type AddPostActionType = {
     type: 'ADD-POST'
-    postMessage: string
-
-}
+   }
 
 export type ChangeNewTextActionType = {
     type: 'UPDATE-NEW-POST-TEXT'

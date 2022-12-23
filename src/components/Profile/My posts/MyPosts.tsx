@@ -11,6 +11,22 @@ import {AddPostActionType, ChangeNewTextActionType} from "../../../redux/state";
 //     message: string
 //     likesCount: number
 // }
+
+let addPostActionCreator = () => {
+    return {
+        type: 'ADD-POST'
+
+    }
+}
+
+let updateNewPostActionCreator = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    return {
+        type: 'UPDATE-NEW-POST-TEXT',
+        newText: e.currentTarget.value
+
+    }
+}
+
 export type MyPostsTypeProps = {
     postsData: Array<OnePostTypeProps>
     // addPost: (postMessage: string) => void
@@ -32,15 +48,12 @@ export const MyPosts = (props: MyPostsTypeProps) => {
     let addPost = () => {
         let postMessage = newPostElement.current?.value
         //props.addPost(postMessage)
-
-        postMessage && props.dispatch({type: 'ADD-POST', postMessage})
-
+        postMessage && props.dispatch(addPostActionCreator)
     }
     let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        let postMessage = newPostElement.current?.value
         if (postMessage) {
             // props.updateNewPostText(postMessage)
-            props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: e.currentTarget.value})
+            props.dispatch(updateNewPostActionCreator)
         }
     }
 
