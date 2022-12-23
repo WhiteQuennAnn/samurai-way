@@ -4,8 +4,6 @@ import {Post} from "./Post/Post";
 import {OnePostTypeProps} from "../../../Type";
 import {ProfilePropsType} from "../../../App";
 import {AddPostActionType, ChangeNewTextActionType} from "../../../redux/state";
-
-
 // export type OnePostTypeProps = {
 //     id: number
 //     message: string
@@ -15,8 +13,10 @@ import {AddPostActionType, ChangeNewTextActionType} from "../../../redux/state";
 let addPostActionCreator = () => {
 
     return {
-        type: ADD_POST
-
+        type: ADD_POST,
+        payload: {
+            postMessage: string
+        }
     }
 }
 
