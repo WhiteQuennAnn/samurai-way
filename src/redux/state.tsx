@@ -62,7 +62,7 @@ export let store: StoreType = {
     },
     dispatch(action:
                  AddPostActionType | ChangeNewTextActionType
-    ) { //{ type: 'ADD-POST'}
+    ) {
         if (action.type === 'ADD-POST') {
             debugger
             const newPost: OnePostTypeProps = {
@@ -76,8 +76,10 @@ export let store: StoreType = {
         } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
             this._state.profilePage.newPostText = action.newText;
             this._onChange();
+        } else if (action.type === 'UPDATE-NEW-MESSAGE-BODY'){
+            this._state.dialogsPage.newMessageBody= action.body
         }
-    }
+            }
 }
 export default store;
 
