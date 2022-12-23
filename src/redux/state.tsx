@@ -55,26 +55,6 @@ let store: StoreType = {
         return this._state
     },
 
-    // _callSubscriber() {
-    //     console.log('State changed')
-    // },
-
-    // addPost(postMessage: string) {
-    // const newPost: OnePostTypeProps = {
-    //     id: new Date().getTime(),
-    //     message: postMessage,
-    //     likesCount: 94
-    // };
-    // this._state.profilePage.postsData.push(newPost)
-    // this._state.profilePage.newPostText = ' '
-    // this._onChange();
-    // }
-    // ,
-    // updateNewPostText(newText: string) {
-    //     this._state.profilePage.newPostText = newText;
-    //     this._onChange();
-    // },
-
     export const addPostActionCreator = () => {
         return {
             type: ADD_POST
