@@ -28,6 +28,19 @@ export const updateNewPostActionCreator = (e: ChangeEvent<HTMLTextAreaElement>) 
     } as const
 }
 
+export const sendMessageCreator = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    return {
+        type: 'UPDATE-NEW-POST-TEXT',
+        newText: e.currentTarget.value
+    } as const
+}
+export const updateNewMessageBodyCreator = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    return {
+        type: 'UPDATE-NEW-POST-TEXT',
+        newText: e.currentTarget.value
+    } as const
+}
+
 export let store: StoreType = {
     _state: {
         profilePage: {
