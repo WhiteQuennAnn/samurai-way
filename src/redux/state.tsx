@@ -7,8 +7,17 @@ export type StoreType = {
     updateNewPostText: (newText: string) => void
     addPost: (postMessage: string) => void
     subscribe: (callback: () => void) => void
-
     getState: () => StateType
+    dispatch: (action: any) => void
+}
+type AddPostActionType = {
+    type: 'ADD-POST'
+    postMessage: string
+
+}
+type ChangeNewTextActionType = {
+    type: 'UPDATE-NEW-POST-TEXT'
+    newText: string
 
 }
 
@@ -68,7 +77,7 @@ let store: StoreType = {
         if (action.type === 'ADD-POST') {
             const newPost: OnePostTypeProps = {
                 id: new Date().getTime(),
-                message: postMessage,
+                message: action.postMessage,
                 likesCount: 94
             };
             this._state.profilePage.postsData.push(newPost)
