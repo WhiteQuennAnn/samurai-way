@@ -11,27 +11,23 @@ export type StoreType = {
     dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
 }
 
-
-type AddPostActionType = ReturnType<typeof addPostActionCreator>
-
-export type ChangeNewTextActionType = {
-    type: 'UPDATE-NEW-POST-TEXT'
-    newText: string
-}
+export type AddPostActionType = ReturnType<typeof addPostActionCreator>
+export type ChangeNewTextActionType = ReturnType<typeof updateNewPostActionCreator>
 
 export const addPostActionCreator = () => {
     return {
-        type: 'ADD-POST'
-    }
+        type: 'ADD-POST',
+        postMessage: any
+    } as const
 }
 
-export const updateNewPostActionCreator = (e: ChangeEvent<HTMLTextAreaElement>): ChangeNewTextActionType => {
+export const updateNewPostActionCreator = (e: ChangeEvent<HTMLTextAreaElement>) => {
     return {
         type: 'UPDATE-NEW-POST-TEXT',
-        newText: e.currentTarget.value
-
+        newText: e.currentTarget.value} as const
     }
-    let store: StoreType = {
+
+    export let store: StoreType = {
         _state: {
             profilePage: {
                 postsData: [
@@ -62,35 +58,28 @@ export const updateNewPostActionCreator = (e: ChangeEvent<HTMLTextAreaElement>):
         getState() {
             return this._state
         },
-
-
-    }
-    dispatch(action
-:
-    AddPostActionType | ChangeNewTextActionType
-)
-    { //{ type: 'ADD-POST'}
-        debugger
-        if (action.type === 'ADD-POST') {
-            debugger
-            const newPost: OnePostTypeProps = {
-                id: new Date().getTime(),
-                message: action.postMessage,
-                likesCount: 94
-            };
-            this._state.profilePage.postsData.push(newPost)
-            this._state.profilePage.newPostText = ' '
-            this._onChange();
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._state.profilePage.newPostText = action.newText;
-            this._onChange();
+        dispatch(action:
+                     AddPostActionType | ChangeNewTextActionType
+        ) { //{ type: 'ADD-POST'}
+            if (action.type === 'ADD-POST') {
+                debugger
+                const newPost: OnePostTypeProps = {
+                    id: new Date().getTime(),
+                    message: action.postMessage,
+                    likesCount: 94
+                };
+                this._state.profilePage.postsData.push(newPost)
+                this._state.profilePage.newPostText = ' '
+                this._onChange();
+            } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+                this._state.profilePage.newPostText = action.newText;
+                this._onChange();
+            }
         }
+
+
     }
 
 
-}
-export default store;
 
-
-//window.store = store;
 
