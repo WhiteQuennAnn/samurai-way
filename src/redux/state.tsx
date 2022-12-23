@@ -76,15 +76,16 @@ export let store: StoreType = {
         } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
             this._state.profilePage.newPostText = action.newText;
             this._onChange();
-        } else if (action.type === 'UPDATE-NEW-MESSAGE-BODY'){
-            this._state.dialogsPage.newMessageBody= action.body;
+        } else if (action.type === 'UPDATE-NEW-MESSAGE-BODY') {
+            this._state.dialogsPage.newMessageBody = action.body;
             this._onChange();
-        }else if (action.type === 'SEND-MESSAGE'){
-            this._state.dialogsPage.newMessageBody= action.body;
+        } else if (action.type === 'SEND-MESSAGE') {
+            let body = this._state.dialogsPage.newMessageBody;
+            this._state.dialogsPage.newMessageBody = "";
             this._onChange();
-            }
-}
-export default store;
+        }
+    }
+    export default store;
 
 
 
