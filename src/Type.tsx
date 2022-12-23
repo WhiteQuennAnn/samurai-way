@@ -27,6 +27,6 @@ export type OneMessageItemDataProps = {
 }
 export type OnePostTypeProps = {
     id: number
-    message: string
+    message: string| undefined
     likesCount: number
 }
