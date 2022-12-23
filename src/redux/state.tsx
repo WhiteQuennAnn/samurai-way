@@ -77,8 +77,11 @@ export let store: StoreType = {
             this._state.profilePage.newPostText = action.newText;
             this._onChange();
         } else if (action.type === 'UPDATE-NEW-MESSAGE-BODY'){
-            this._state.dialogsPage.newMessageBody= action.body
-        }
+            this._state.dialogsPage.newMessageBody= action.body;
+            this._onChange();
+        }else if (action.type === 'SEND-MESSAGE'){
+            this._state.dialogsPage.newMessageBody= action.body;
+            this._onChange();
             }
 }
 export default store;
