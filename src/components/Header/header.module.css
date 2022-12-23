@@ -1,8 +1,7 @@
-.header {
+.header{
     grid-area: h;
-    background-color: blueviolet;
+    background-color: azure;
 }
-
-.header img {
+.header img{
     width: 40px;
 }

@@ -15,17 +15,16 @@ import store, {AddPostActionType, ChangeNewTextActionType, StoreType} from "./re
 // }
 export type ProfilePropsType = {
     state: StateType
-    dispatch: (action: AddPostActionType| ChangeNewTextActionType) => void
-    newPostText: string
+    dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
+
 }
-type AllType = PropsType| ProfilePropsType;
+type AllType = PropsType | ProfilePropsType;
 
 type PropsType = {
     store: StoreType
 }
 
-export const App: React.FC<any> = (props) => {
-    const state = props.store.getState()
+export const App: React.FC<ProfilePropsType> = (props) => {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -37,7 +36,6 @@ export const App: React.FC<any> = (props) => {
                     <Route path='/profile' render={() => <Profile
                         state={props.state}
                         dispatch={props.dispatch}
-                        newPostText={props.state.profilePage.newPostText}
                     ></Profile>}
 
                     />
