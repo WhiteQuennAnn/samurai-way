@@ -3,30 +3,17 @@ import s from "./MyPosts.module.css";
 import {Post} from "./Post/Post";
 import {OnePostTypeProps} from "../../../Type";
 import {ProfilePropsType} from "../../../App";
-import {AddPostActionType, ChangeNewTextActionType} from "../../../redux/state";
+import {
+    addPostActionCreator,
+    AddPostActionType,
+    ChangeNewTextActionType,
+    updateNewPostActionCreator
+} from "../../../redux/state";
 // export type OnePostTypeProps = {
 //     id: number
 //     message: string
 //     likesCount: number
 // }
-
-let addPostActionCreator = () => {
-
-    return {
-        type: ADD_POST,
-        payload: {
-            postMessage: string
-        }
-    }
-}
-
-let updateNewPostActionCreator = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    return {
-        type: 'UPDATE-NEW-POST-TEXT',
-        newText: e.currentTarget.value
-
-    }
-}
 
 export type MyPostsTypeProps = {
     postsData: Array<OnePostTypeProps>
@@ -49,12 +36,12 @@ export const MyPosts = (props: MyPostsTypeProps) => {
     let addPost = () => {
         let postMessage = newPostElement.current?.value
         //props.addPost(postMessage)
-        postMessage && props.dispatch(addPostActionCreator)
+        postMessage && props.dispatch(addPostActionCreator())
     }
     let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         if (postMessage) {
             // props.updateNewPostText(postMessage)
-            props.dispatch(updateNewPostActionCreator)
+            props.dispatch(updateNewPostActionCreator(props.newPostText))
         }
     }
 

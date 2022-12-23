@@ -12,65 +12,64 @@ export type StoreType = {
 }
 
 
-export type AddPostActionType = {
-    type: 'ADD-POST'
-}
+type AddPostActionType = ReturnType<typeof addPostActionCreator>
 
 export type ChangeNewTextActionType = {
     type: 'UPDATE-NEW-POST-TEXT'
     newText: string
 }
-let ADD_POST = 'ADD-POST';
-let CHANGE_UPDATE_NEW_POST = 'UPDATE-NEW-POST-TEXT';
 
-let store: StoreType = {
-    _state: {
-        profilePage: {
-            postsData: [
-                {id: 1, message: "Hey how are you", likesCount: 22},
-                {id: 2, message: "its my first post", likesCount: 65}],
-            newPostText: "Anna"
+export const addPostActionCreator = () => {
+    return {
+        type: 'ADD-POST'
+    }
+}
+
+export const updateNewPostActionCreator = (e: ChangeEvent<HTMLTextAreaElement>): ChangeNewTextActionType => {
+    return {
+        type: 'UPDATE-NEW-POST-TEXT',
+        newText: e.currentTarget.value
+
+    }
+    let store: StoreType = {
+        _state: {
+            profilePage: {
+                postsData: [
+                    {id: 1, message: "Hey how are you", likesCount: 22},
+                    {id: 2, message: "its my first post", likesCount: 65}],
+                newPostText: "Anna"
+            },
+            dialogsPage: {
+                messageItemData: [
+                    {id: 1, message: "Hello"},
+                    {id: 2, message: "Pike"},
+                    {id: 3, message: "Buy"}
+                ],
+                dialogsData: [
+                    {id: 1, name: "Anya"},
+                    {id: 2, name: "Dima"},
+                    {id: 3, name: "Igor"}
+                ],
+            }
         },
-        dialogsPage: {
-            messageItemData: [
-                {id: 1, message: "Hello"},
-                {id: 2, message: "Pike"},
-                {id: 3, message: "Buy"}
-            ],
-            dialogsData: [
-                {id: 1, name: "Anya"},
-                {id: 2, name: "Dima"},
-                {id: 3, name: "Igor"}
-            ],
-        }
-    },
-    _onChange() {
-        console.log("state changed")
-    },
+        _onChange() {
+            console.log("state changed")
+        },
 
-    subscribe(callback) {
-        this._onChange = callback; // наблюдатель
-    },
-    getState() {
-        return this._state
-    },
+        subscribe(callback) {
+            this._onChange = callback; // наблюдатель
+        },
+        getState() {
+            return this._state
+        },
 
-    export const addPostActionCreator = () => {
-        return {
-            type: ADD_POST
 
-        }
     }
-
-    export  const updateNewPostActionCreator = (e: ChangeEvent<HTMLTextAreaElement>) => {
-
-        return {
-            type: CHANGE_UPDATE_NEW_POST,
-            newText: e.currentTarget.value
-
-        }
-    }
-    dispatch(action: AddPostActionType | ChangeNewTextActionType) { //{ type: 'ADD-POST'}
+    dispatch(action
+:
+    AddPostActionType | ChangeNewTextActionType
+)
+    { //{ type: 'ADD-POST'}
         debugger
         if (action.type === 'ADD-POST') {
             debugger
