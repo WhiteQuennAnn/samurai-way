@@ -47,7 +47,7 @@ export let store: StoreType = {
                 {id: 2, name: "Dima"},
                 {id: 3, name: "Igor"}
             ],
-            newMessageBody:
+            newMessageBody: ""
         }
     },
     _onChange() {

@@ -7,6 +7,7 @@ export type StateType = {
     dialogsPage: {
         messageItemData: OneMessageItemDataProps[]
         dialogsData: OneDialogsDataPropsType[]
+        newMessageBody: string
     }
 }
 
