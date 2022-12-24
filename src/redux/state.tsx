@@ -28,16 +28,14 @@ export const updateNewPostActionCreator = (e: ChangeEvent<HTMLTextAreaElement>) 
     } as const
 }
 
-export const sendMessageCreator = (e: ChangeEvent<HTMLTextAreaElement>) => {
+export const sendMessageCreator = () => {
     return {
-        type: 'UPDATE-NEW-POST-TEXT',
-        newText: e.currentTarget.value
+        type: 'SEND-MESSAGE'
     } as const
 }
-export const updateNewMessageBodyCreator = (e: ChangeEvent<HTMLTextAreaElement>) => {
+export const updateNewMessageBodyCreator = () => {
     return {
-        type: 'UPDATE-NEW-POST-TEXT',
-        newText: e.currentTarget.value
+        type: 'UPDATE-NEW-MESSAGE-BODY'
     } as const
 }
 
@@ -100,7 +98,7 @@ export let store: StoreType = {
         }
     }
 }
-    export default store;
+export default store;
 
 
 
