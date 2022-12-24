@@ -9,13 +9,13 @@ export const Dialogs = (props: Global) => {
 
     let state = props.store.getState().dialogsPage;
 
-    let dialogsElements = props.dialogsPage.dialogsData
+    let dialogsElements = state.dialogsData
         .map(d => <DialogItem name={d.name} id={d.id}/>);
 
-    let messagesElenents = props.dialogsPage.messageItemData
+    let messagesElenents = state.messageItemData
         .map(m => <MessageItem message={m.message}/>)
 
-    let newMessageBody = props.dialogsPage.newMessageBody
+    let newMessageBody = state.newMessageBody
 
 
     let onSendMessageClick = () => {
