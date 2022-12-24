@@ -11,6 +11,16 @@ export const Dialogs = (props: Global) => {
 
     let messagesElenents = props.dialogsPage.messageItemData
         .map(m => <MessageItem message={m.message}/>)
+
+    let newMessageBody = props.dialogsPage.newMessageBody
+
+
+    let onSendMessageClick = () => {
+
+    }
+    let onNewMessageChange = () => {
+
+    }
     return (
 
         <div className={s.dialogs}>
@@ -23,9 +33,12 @@ export const Dialogs = (props: Global) => {
             <div className={s.messages}>
                 <div> {messagesElenents}</div>
                 <div>
-                    <div><textarea placeholder={"Enter your message..."}> </textarea></div>
+                    <div><textarea
+                        onChange={onNewMessageChange}
+                        value={newMessageBody}
+                        placeholder={"Enter your message..."}> </textarea></div>
                     <div>
-                        <button> Send</button>
+                        <button onClick={onSendMessageClick}> Send</button>
                     </div>
                 </div>
             </div>
