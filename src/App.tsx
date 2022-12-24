@@ -31,7 +31,9 @@ export const App: React.FC<ProfilePropsType> = (props) => {
                 <Header/>
                 <Nav/>
                 <div className="app-wrapper-content">
-                    <Route path='/dialogs' render={() => <Dialogs dialogsPage={props.state.dialogsPage}
+                    <Route path='/dialogs' render={() => <Dialogs
+                        store={props.store}
+                       // dialogsPage={props.state.dialogsPage}
                     />}/>
                     <Route path='/profile' render={() => <Profile
                         state={props.state}

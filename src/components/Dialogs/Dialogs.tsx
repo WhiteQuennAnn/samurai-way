@@ -3,9 +3,11 @@ import s from './Dialogs.module.css';
 import {DialogItem} from "./DialogItem/DialogsItem";
 import {MessageItem} from "./Message/Message";
 import {Global} from "../../Type";
-import {updateNewMessageBodyCreator} from "../../redux/state";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/state";
 
 export const Dialogs = (props: Global) => {
+
+    let state = props.store.getState().dialogsPage;
 
     let dialogsElements = props.dialogsPage.dialogsData
         .map(d => <DialogItem name={d.name} id={d.id}/>);
@@ -17,7 +19,7 @@ export const Dialogs = (props: Global) => {
 
 
     let onSendMessageClick = () => {
-
+        props.store.dispatch( sendMessageCreator())
     }
     let onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         let body = e.target.value
