@@ -23,8 +23,10 @@ export const Dialogs = (props: Global) => {
             <div className={s.messages}>
                 <div> {messagesElenents}</div>
                 <div>
-                    <div> <textarea> </textarea></div>
-                    <div> <button> </button></div>
+                    <div><textarea placeholder={"Enter your message..."}> </textarea></div>
+                    <div>
+                        <button> Send</button>
+                    </div>
                 </div>
             </div>
 
