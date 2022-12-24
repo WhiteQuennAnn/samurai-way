@@ -21,7 +21,11 @@ export const Dialogs = (props: Global) => {
 
             </div>
             <div className={s.messages}>
-                {messagesElenents}
+                <div> {messagesElenents}</div>
+                <div>
+                    <div> <textarea> </textarea></div>
+                    <div> <button> </button></div>
+                </div>
             </div>
 
         </div>
