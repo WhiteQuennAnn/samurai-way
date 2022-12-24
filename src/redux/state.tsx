@@ -33,9 +33,10 @@ export const sendMessageCreator = () => {
         type: 'SEND-MESSAGE'
     } as const
 }
-export const updateNewMessageBodyCreator = () => {
+export const updateNewMessageBodyCreator = (body: string) => {
     return {
-        type: 'UPDATE-NEW-MESSAGE-BODY'
+        type: 'UPDATE-NEW-MESSAGE-BODY',
+        body: body
     } as const
 }
 
