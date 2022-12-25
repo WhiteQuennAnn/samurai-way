@@ -1,7 +1,13 @@
 import {OnePostTypeProps} from "../Type";
 import React, {ChangeEvent} from "react";
 
-let initialState = {
+
+type ProfileType = {
+    postsData: OnePostTypeProps[],
+    newPostText: string
+}
+
+let initialState: ProfileType = {
     postsData: [
         {id: 1, message: "Hey how are you", likesCount: 22},
         {id: 2, message: "its my first post", likesCount: 65}],

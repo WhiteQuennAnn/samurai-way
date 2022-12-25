@@ -1,4 +1,17 @@
-export const DialogsReducer = (state, action) => {
+let initialState = {
+    messageItemData: [
+        {id: 1, message: "Hello"},
+        {id: 2, message: "Pike"},
+        {id: 3, message: "Buy"}
+    ],
+    dialogsData: [
+        {id: 1, name: "Anya"},
+        {id: 2, name: "Dima"},
+        {id: 3, name: "Igor"}
+    ],
+    newMessageBody: ""
+}
+export const DialogsReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'UPDATE-NEW-MESSAGE-BODY':
             state.newMessageBody = action.body;
