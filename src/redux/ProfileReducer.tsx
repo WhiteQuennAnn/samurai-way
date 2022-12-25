@@ -1,9 +1,8 @@
 import {OnePostTypeProps} from "../Type";
 
-const ProfileReducer = (state, action) => {
+export const ProfileReducer = (state, action) => {
 
     if (action.type === 'ADD-POST') {
-        debugger
         const newPost: OnePostTypeProps = {
             id: new Date().getTime(),
             message: action.postMessage,

@@ -1,4 +1,4 @@
-const DialogsReducer = (state, action) => {
+export const DialogsReducer = (state, action) => {
 
     if (action.type === 'UPDATE-NEW-MESSAGE-BODY') {
         state.newMessageBody = action.body;
