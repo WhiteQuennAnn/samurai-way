@@ -7,7 +7,7 @@ import {
     AddPostActionType,
     ChangeNewTextActionType,
 
-} from "../../../redux/state";
+} from "../../../redux/store";
 import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/ProfileReducer";
 
 export type MyPostsTypeProps = {
