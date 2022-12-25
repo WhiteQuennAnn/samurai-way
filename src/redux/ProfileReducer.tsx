@@ -14,9 +14,10 @@ let initialState: ProfileType = {
     newPostText: "Anna"
 }
 
-export const ProfileReducer = (state = initialState, action: AddPostActionType| ChangeNewTextActionType) => {
+export const ProfileReducer = (state = initialState, action: AddPostActionType | ChangeNewTextActionType) => {
     switch (action.type) {
         case 'ADD-POST':
+            debugger
             let newPost: OnePostTypeProps = {
                 id: new Date().getTime(),
                 message: action.postMessage,
@@ -37,6 +38,7 @@ export type AddPostActionType = ReturnType<typeof addPostActionCreator>
 export type ChangeNewTextActionType = ReturnType<typeof updateNewPostActionCreator>
 
 export const addPostActionCreator = () => {
+    debugger
     return {
         type: 'ADD-POST',
         postMessage: React.createRef<HTMLTextAreaElement>().current?.value
