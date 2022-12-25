@@ -10,5 +10,6 @@ let reducers = combineReducers(
 );
 
 let store = createStore(reducers);
+export type AppStoreType = typeof store;
 
 export default store;

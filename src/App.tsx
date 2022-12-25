@@ -7,6 +7,7 @@ import {Dialogs} from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 import {StateType} from "./Type";
 import store, {AddPostActionType, ChangeNewTextActionType, StoreType} from "./redux/store";
+import {AppStoreType} from "./redux/redux-store";
 
 // export type AppPropsType = {
 //     dialogsData: Array<OneDialogsDataPropsType>
@@ -21,7 +22,7 @@ export type ProfilePropsType = {
 type AllType = PropsType | ProfilePropsType;
 
 type PropsType = {
-    store: StoreType
+    store: AppStoreType
 }
 
 export const App: React.FC<ProfilePropsType> = (props) => {
