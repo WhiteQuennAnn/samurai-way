@@ -1,4 +1,5 @@
 import {OnePostTypeProps} from "../Type";
+import React, {ChangeEvent} from "react";
 
 export const ProfileReducer = (state, action) => {
     switch (action.type) {
@@ -18,6 +19,22 @@ export const ProfileReducer = (state, action) => {
         default:
             return state;
     }
+}
+export type AddPostActionType = ReturnType<typeof addPostActionCreator>
+export type ChangeNewTextActionType = ReturnType<typeof updateNewPostActionCreator>
+
+export const addPostActionCreator = () => {
+    return {
+        type: 'ADD-POST',
+        postMessage: React.createRef<HTMLTextAreaElement>().current?.value
+    } as const
+}
+
+export const updateNewPostActionCreator = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    return {
+        type: 'UPDATE-NEW-POST-TEXT',
+        newText: e.currentTarget.value
+    } as const
 }
 
 

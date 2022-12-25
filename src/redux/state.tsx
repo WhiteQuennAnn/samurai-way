@@ -16,31 +16,8 @@ export type StoreType = {
 export type AddPostActionType = ReturnType<typeof addPostActionCreator>
 export type ChangeNewTextActionType = ReturnType<typeof updateNewPostActionCreator>
 
-export const addPostActionCreator = () => {
-    return {
-        type: 'ADD-POST',
-        postMessage: React.createRef<HTMLTextAreaElement>().current?.value
-    } as const
-}
 
-export const updateNewPostActionCreator = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    return {
-        type: 'UPDATE-NEW-POST-TEXT',
-        newText: e.currentTarget.value
-    } as const
-}
 
-export const sendMessageCreator = () => {
-    return {
-        type: 'SEND-MESSAGE'
-    } as const
-}
-export const updateNewMessageBodyCreator = (body: string) => {
-    return {
-        type: 'UPDATE-NEW-MESSAGE-BODY',
-        body: body
-    } as const
-}
 
 export let store: StoreType = {
     _state: {
@@ -83,6 +60,7 @@ export let store: StoreType = {
     }
 }
 export default store;
+
 
 
 
