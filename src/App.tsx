@@ -14,18 +14,14 @@ import {AppStoreType} from "./redux/redux-store";
 //     messageItemData: Array<OneMessageItemDataProps>
 //     postsData: Array<OnePostTypeProps>
 // }
-export type ProfilePropsType = {
-    state: StateType
-    dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
 
-}
 type AllType = PropsType | ProfilePropsType;
 
-type PropsType = {
+ export type PropsType = {
     store: AppStoreType
 }
 
-export const App: React.FC<ProfilePropsType> = (props) => {
+export const App: React.FC<PropsType> = (props) => {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -33,8 +29,9 @@ export const App: React.FC<ProfilePropsType> = (props) => {
                 <Nav/>
                 <div className="app-wrapper-content">
                     <Route path='/dialogs' render={() => <Dialogs
-                        store={props.store}
-                       // dialogsPage={props.state.dialogsPage}
+
+                        dialogsPage={props.store.getState().dialogsPage}
+
                     />}/>
                     <Route path='/profile' render={() => <Profile
                         state={props.state}
