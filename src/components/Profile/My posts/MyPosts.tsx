@@ -28,8 +28,8 @@ export const MyPosts = (props: MyPostsTypeProps) => {
         postMessage && props.dispatch(addPostActionCreator())
     }
     let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        newText: e.currentTarget.value
-        props.dispatch(updateNewPostActionCreator(e))
+        let newText = e.currentTarget.value
+        props.dispatch(updateNewPostActionCreator(newText))
 
     }
     return (

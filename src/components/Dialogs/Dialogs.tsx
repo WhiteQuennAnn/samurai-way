@@ -15,14 +15,15 @@ export const Dialogs = (props: Global) => {
     let messagesElenents = state.messageItemData
         .map(m => <MessageItem message={m.message}/>)
 
-    let newMessageBody =  state.newMessageBody
+    let newMessageBody = state.newMessageBody
 
     let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageCreator())
+        props.dispatch(sendMessageCreator())
     }
+
     let onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        let body = e.target.value
-        props.store.dispatch(updateNewMessageBodyCreator(body))
+        let body = e.currentTarget.value
+        props.dispatch(updateNewMessageBodyCreator(body))
     }
     return (
 

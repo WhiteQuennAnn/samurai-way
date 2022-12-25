@@ -1,12 +1,13 @@
 import {OneDialogsDataPropsType, OneMessageItemDataProps} from "../Type";
+import {addPostActionCreator, updateNewPostActionCreator} from "./ProfileReducer";
 
-type DialodsType = {
+type DialogsType = {
     messageItemData: OneMessageItemDataProps[]
     dialogsData: OneDialogsDataPropsType[]
     newMessageBody: string
 }
 
-let initialState: DialodsType = {
+let initialState: DialogsType = {
     messageItemData: [
         {id: 1, message: "Hello"},
         {id: 2, message: "Pike"},
@@ -19,7 +20,7 @@ let initialState: DialodsType = {
     ],
     newMessageBody: ""
 }
-export const DialogsReducer = (state = initialState, action) => {
+export const DialogsReducer = (state = initialState, action: SendMessageType | updateNewMessageBodyType) => {
     switch (action.type) {
         case 'UPDATE-NEW-MESSAGE-BODY':
             state.newMessageBody = action.body;
@@ -33,12 +34,18 @@ export const DialogsReducer = (state = initialState, action) => {
             return state;
     }
 }
+
+export type SendMessageType = ReturnType<typeof sendMessageCreator>
+export type updateNewMessageBodyType = ReturnType<typeof updateNewMessageBodyCreator>
+
 export const sendMessageCreator = () => {
+
     return {
         type: 'SEND-MESSAGE'
     } as const
 }
 export const updateNewMessageBodyCreator = (body: string) => {
+
     return {
         type: 'UPDATE-NEW-MESSAGE-BODY',
         body: body
