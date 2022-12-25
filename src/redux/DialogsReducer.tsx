@@ -1,4 +1,12 @@
-let initialState = {
+import {OneDialogsDataPropsType, OneMessageItemDataProps} from "../Type";
+
+type DialodsType = {
+    messageItemData: OneMessageItemDataProps[]
+    dialogsData: OneDialogsDataPropsType[]
+    newMessageBody: string
+}
+
+let initialState: DialodsType = {
     messageItemData: [
         {id: 1, message: "Hello"},
         {id: 2, message: "Pike"},
