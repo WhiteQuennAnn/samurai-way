@@ -5,19 +5,9 @@ import {Nav} from "./components/Nav/nav";
 import {Profile} from "./components/Profile/profile";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
-import {StateType} from "./Type";
-import store, {AddPostActionType, ChangeNewTextActionType, StoreType} from "./redux/store";
 import {AppStoreType} from "./redux/redux-store";
 
-// export type AppPropsType = {
-//     dialogsData: Array<OneDialogsDataPropsType>
-//     messageItemData: Array<OneMessageItemDataProps>
-//     postsData: Array<OnePostTypeProps>
-// }
-
-type AllType = PropsType | ProfilePropsType;
-
- export type PropsType = {
+export type PropsType = {
     store: AppStoreType
 }
 

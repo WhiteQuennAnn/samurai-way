@@ -4,7 +4,6 @@ import {MyPosts} from "./My posts/MyPosts";
 import {ProfileInfo} from "./ProfileInfo/profileInfo";
 import {PropsType} from "../../App";
 
-
 export const Profile = (props: PropsType) => {
     return (
         <div>
@@ -12,7 +11,6 @@ export const Profile = (props: PropsType) => {
             <MyPosts postsData={props.store.getState().profilePage.postsData}
                      dispatch={props.store.dispatch}
                      newPostText={props.store.getState().profilePage.newPostText}
-
             />
         </div>
     );
