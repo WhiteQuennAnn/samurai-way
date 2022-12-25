@@ -14,6 +14,7 @@ export type Global = {
     dialogsPage: {
         messageItemData: Array<OneMessageItemDataProps>
         dialogsData: Array<OneDialogsDataPropsType>
+        newMessageBody: string
     }
 }
 export type OneDialogsDataPropsType = {

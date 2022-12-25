@@ -7,7 +7,7 @@ import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/Dialo
 
 export const Dialogs = (props: Global) => {
 
-    let state = props.store.getState().dialogsPage;
+    let state = props.dialogsPage
 
     let dialogsElements = state.dialogsData
         .map(d => <DialogItem name={d.name} id={d.id}/>);
@@ -15,8 +15,7 @@ export const Dialogs = (props: Global) => {
     let messagesElenents = state.messageItemData
         .map(m => <MessageItem message={m.message}/>)
 
-    let newMessageBody = state.newMessageBody
-
+    let newMessageBody =  state.newMessageBody
 
     let onSendMessageClick = () => {
         props.store.dispatch(sendMessageCreator())

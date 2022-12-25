@@ -22,6 +22,7 @@ export const App: React.FC<PropsType> = (props) => {
                         dialogsPage={props.store.getState().dialogsPage}
                     />}/>
                     <Route path='/profile' render={() => <Profile
+                        dispatch={props.store.dispatch}
                         profilePage={props.store.getState().profilePage}
                     ></Profile>}
 
