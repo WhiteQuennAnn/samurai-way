@@ -80,7 +80,6 @@ export let store: StoreType = {
         this._state.profilePage = ProfileReducer(this._state.profilePage, action);
         this._state.dialogsPage = DialogsReducer(this._state.dialogsPage, action);
         this._onChange();
-
     }
 }
 export default store;
