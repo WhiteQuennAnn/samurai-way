@@ -9,6 +9,6 @@ let reducers = combineReducers(
     }
 );
 
-let store = createStore();
+let store = createStore(reducers);
 
 export default store;

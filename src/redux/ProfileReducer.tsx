@@ -1,7 +1,14 @@
 import {OnePostTypeProps} from "../Type";
 import React, {ChangeEvent} from "react";
 
-export const ProfileReducer = (state, action) => {
+let initialState = {
+    postsData: [
+        {id: 1, message: "Hey how are you", likesCount: 22},
+        {id: 2, message: "its my first post", likesCount: 65}],
+    newPostText: "Anna"
+}
+
+export const ProfileReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD-POST':
             let newPost: OnePostTypeProps = {
