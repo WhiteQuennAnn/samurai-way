@@ -8,7 +8,6 @@ import {StateType} from "./Type";
 let rerenderEntireTree = (store: AppStoreType) => {
     ReactDOM.render(
         <App store={store}
-
         />,
         document.getElementById('root')
     );

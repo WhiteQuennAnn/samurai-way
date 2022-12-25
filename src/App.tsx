@@ -19,13 +19,10 @@ export const App: React.FC<PropsType> = (props) => {
                 <Nav/>
                 <div className="app-wrapper-content">
                     <Route path='/dialogs' render={() => <Dialogs
-
                         dialogsPage={props.store.getState().dialogsPage}
-
                     />}/>
                     <Route path='/profile' render={() => <Profile
-                        state={props.state}
-                        dispatch={props.dispatch}
+                        profilePage={props.store.getState().profilePage}
                     ></Profile>}
 
                     />

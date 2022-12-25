@@ -1,7 +1,4 @@
-
-
 export type StateType = {
-
     profilePage: {
         postsData: OnePostTypeProps[],
         newPostText: string
