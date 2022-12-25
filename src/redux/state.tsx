@@ -75,28 +75,28 @@ export let store: StoreType = {
     dispatch(action:
                  AddPostActionType | ChangeNewTextActionType
     ) {
-        if (action.type === 'ADD-POST') {
-            debugger
-            const newPost: OnePostTypeProps = {
-                id: new Date().getTime(),
-                message: action.postMessage,
-                likesCount: 94
-            };
-            this._state.profilePage.postsData.push(newPost)
-            this._state.profilePage.newPostText = ' '
-            this._onChange();
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._state.profilePage.newPostText = action.newText;
-            this._onChange();
-        } else if (action.type === 'UPDATE-NEW-MESSAGE-BODY') {
-            this._state.dialogsPage.newMessageBody = action.body;
-            this._onChange();
-        } else if (action.type === 'SEND-MESSAGE') {
-            let body = this._state.dialogsPage.newMessageBody;
-            this._state.dialogsPage.newMessageBody = "";
-            this._state.dialogsPage.messageItemData.push({id: 4, message: body})
-            this._onChange();
-        }
+        // if (action.type === 'ADD-POST') {
+        //     debugger
+        //     const newPost: OnePostTypeProps = {
+        //         id: new Date().getTime(),
+        //         message: action.postMessage,
+        //         likesCount: 94
+        //     };
+        //     this._state.profilePage.postsData.push(newPost)
+        //     this._state.profilePage.newPostText = ' '
+        //     this._onChange();
+        // } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        //     this._state.profilePage.newPostText = action.newText;
+        //     this._onChange();
+        // } else if (action.type === 'UPDATE-NEW-MESSAGE-BODY') {
+        //     this._state.dialogsPage.newMessageBody = action.body;
+        //     this._onChange();
+        // } else if (action.type === 'SEND-MESSAGE') {
+        //     let body = this._state.dialogsPage.newMessageBody;
+        //     this._state.dialogsPage.newMessageBody = "";
+        //     this._state.dialogsPage.messageItemData.push({id: 4, message: body})
+        //     this._onChange();
+        // }
     }
 }
 export default store;
