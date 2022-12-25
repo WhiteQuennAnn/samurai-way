@@ -1,6 +1,6 @@
 import React, {ChangeEvent} from 'react';
 import {OnePostTypeProps, StateType} from "../Type";
-import {ProfileReducer} from "./ProfileReducer";
+import {addPostActionCreator, ProfileReducer, updateNewPostActionCreator} from "./ProfileReducer";
 import {DialogsReducer} from "./DialogsReducer";
 
 export type StoreType = {
@@ -15,9 +15,6 @@ export type StoreType = {
 
 export type AddPostActionType = ReturnType<typeof addPostActionCreator>
 export type ChangeNewTextActionType = ReturnType<typeof updateNewPostActionCreator>
-
-
-
 
 export let store: StoreType = {
     _state: {
