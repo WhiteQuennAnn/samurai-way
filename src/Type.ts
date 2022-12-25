@@ -1,4 +1,3 @@
-import {AddPostActionType, ChangeNewTextActionType} from "./redux/store";
 import {SendMessageType, updateNewMessageBodyType} from "./redux/DialogsReducer";
 
 export type StateType = {

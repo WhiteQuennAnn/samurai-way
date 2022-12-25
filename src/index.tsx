@@ -5,19 +5,20 @@ import ReactDOM from "react-dom";
 import {App} from "./App";
 import {StateType} from "./Type";
 
-let rerenderEntireTree = (store: AppStoreType) => {
+let rerenderEntireTree = () => {
     ReactDOM.render(
         <App store={store}
         />,
         document.getElementById('root')
     );
 }
-rerenderEntireTree(store.getState());
 
-store.subscribe(() => {
-    let state = store.getState()
-    rerenderEntireTree(state)
-})
+// store.subscribe(() => {
+//     let state = store.getState()
+//     rerenderEntireTree(state)
+// })
+rerenderEntireTree()
+store.subscribe(rerenderEntireTree)
 
 
 

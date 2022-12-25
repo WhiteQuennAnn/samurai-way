@@ -4,7 +4,8 @@ import {MyPosts} from "./My posts/MyPosts";
 import {ProfileInfo} from "./ProfileInfo/profileInfo";
 import {PropsType} from "../../App";
 import {OnePostTypeProps} from "../../Type";
-import {AddPostActionType, ChangeNewTextActionType} from "../../redux/store";
+import {AddPostActionType, ChangeNewTextActionType} from "../../redux/ProfileReducer";
+
 
 type ProfilePageType = {
     profilePage: {
