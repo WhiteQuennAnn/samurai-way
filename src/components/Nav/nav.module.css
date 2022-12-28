@@ -10,3 +10,33 @@
 .item a.active{
     color:gold;
 }
+
+
+/*@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');*/
+/** {*/
+/*    box-sizing: border-box;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    font-family: 'Mochiy Pop One', sans-serif;*/
+/*}*/
+
+/*body {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    min-height: 100vh;*/
+/*    background: #252839;*/
+/*}*/
+/*ul {*/
+/*    position: relative;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 30px;*/
+/*}*/
+/*ul li {*/
+/*    position: relative;*/
+/*    list-style: none;*/
+/*}*/
+/*ul li a {*/
+/*    font-size: 4em;*/
+/*    text-decoration: none;*/
