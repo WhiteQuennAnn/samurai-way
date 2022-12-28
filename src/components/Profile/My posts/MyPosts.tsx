@@ -3,11 +3,6 @@ import s from "./MyPosts.module.css";
 import {Post} from "./Post/Post";
 import {OnePostTypeProps} from "../../../Type";
 import {
-
-
-
-} from "../../../redux/redux-store";
-import {
     addPostActionCreator,
     AddPostActionType,
     ChangeNewTextActionType,
