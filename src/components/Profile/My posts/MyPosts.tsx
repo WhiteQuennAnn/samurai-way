@@ -22,15 +22,11 @@ export const MyPosts = (props: MyPostsTypeProps) => {
     let newPostElement = React.createRef<HTMLTextAreaElement>();
 
     let addPost = () => {
-        debugger
 
-       // let postMessage = newPostElement.current?.value
-        //props.addPost(postMessage)
-       // postMessage &&
         props.dispatch(addPostActionCreator())
     }
+
     let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        debugger
         let newText = e.target.value
         props.dispatch(updateNewPostActionCreator(newText))
     }
