@@ -22,15 +22,15 @@ export const MyPosts = (props: MyPostsTypeProps) => {
     let newPostElement = React.createRef<HTMLTextAreaElement>();
 
     let addPost = () => {
-        props.addPost();
-        //  props.dispatch(addPostActionCreator())
+        //props.addPost();
+       props.dispatch(addPostActionCreator())
     }
 
-    let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        let newText = e.target.value
-        props.updateNewPost(newText);
-       // props.dispatch(updateNewPostActionCreator(newText))
-    }
+    // let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    //     let newText = e.target.value
+    //    // props.updateNewPost(newText);
+    //    props.dispatch(updateNewPostActionCreator(newText))
+    // }
 
     return (
         <div className={s.postsBlock}>
