@@ -17,7 +17,7 @@ export type MyPostsTypeProps = {
     dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
 }
 
-export const MyPosts = (props: MyPostsTypeProps) => {
+export const MyPostsContainer = (props: MyPostsTypeProps) => {
     let postsElements = props.postsData.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
     let newPostElement = React.createRef<HTMLTextAreaElement>();
 
