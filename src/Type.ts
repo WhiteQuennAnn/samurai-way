@@ -24,6 +24,9 @@ export type Global = {
         dialogsData: Array<OneDialogsDataPropsType>
         newMessageBody: string
     }
+    sendMessage: () => void
+    updateNewMessageBody: (body: string) => void
+
 
 }
 export type OneDialogsDataPropsType = {
