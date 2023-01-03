@@ -4,8 +4,9 @@ import {DialogItem} from "./DialogItem/DialogsItem";
 import {MessageItem} from "./Message/Message";
 import {Global} from "../../Type";
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/DialogsReducer";
+import {Dialogs} from "./Dialogs";
 
-export const Dialogs = (props: Global) => {
+export const DialogsContainer = (props: Global) => {
 
     let state = props.dialogsPage
 
@@ -23,32 +24,11 @@ export const Dialogs = (props: Global) => {
 
     let onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         let body = e.currentTarget.value
-        props.updateNewMessageBody(body)
+        props.dispatch(updateNewMessageBodyCreator(body))
     }
     return (
 
-        <div className={s.dialogs}>
-
-            <div className={s.dialogsItems}>
-
-                {dialogsElements}
-
-            </div>
-            <div className={s.messages}>
-                <div> {messagesElenents}</div>
-                <div>
-                    <div><textarea
-                        onChange={onNewMessageChange}
-                        value={newMessageBody}
-                        placeholder={"Enter your message..."}> </textarea></div>
-                    <div>
-                        <button onClick={onSendMessageClick}> Send</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
+     <Dialogs dialogsPage={} dispatch={}/>
     );
 };
 
