@@ -24,16 +24,16 @@ export const MyPostsContainer = (props: MyPostsTypeProps) => {
 
     let addPost = () => {
         //props.addPost();
-       props.dispatch(addPostActionCreator())
+        props.dispatch(addPostActionCreator())
     }
 
-    let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        let newText = e.target.value
-       // props.updateNewPost(newText);
-       props.dispatch(updateNewPostActionCreator(newText))
+    let onPostChange = (text) => {
+        let action = updateNewPostActionCreator(text)
+        // props.updateNewPost(newText);
+        props.dispatch(action)
     }
 
     return (
-        <MyPosts postsData={} newPostText={} dispatch={}/>
+        <MyPosts postsData={} newPostText={} dispatch={} updateNewPost={onPostChange}/>
     )
 }
