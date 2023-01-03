@@ -1,6 +1,4 @@
 import React from "react";
-import store from "./redux/redux-store";
-import {App} from "./App";
 
 const StoreContext = React.createContext(null);
 
@@ -11,6 +9,5 @@ export const Provider = (props: any) => {
                 </StoreContext.Provider>
     )
 }
-
 
 export default StoreContext;
