@@ -11,8 +11,7 @@ let rerenderEntireTree = () => {
     ReactDOM.render(
         <StoreContext.Provider value={store}>
 
-            <App store={store}
-            />,
+            <App             />,
             document.getElementById('root')
             );
         </StoreContext.Provider>;

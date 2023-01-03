@@ -23,7 +23,7 @@ export const Profile = (props: PropsType) => {
             {/*         dispatch={props.dispatch}*/}
             {/*         newPostText={props.profilePage.newPostText}*/}
             {/*/>*/}
-            <MyPostsContainer store={props.store}/>
+            <MyPostsContainer />
         </div>
     );
 }

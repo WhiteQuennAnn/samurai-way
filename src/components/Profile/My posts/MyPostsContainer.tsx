@@ -8,8 +8,7 @@ import {
 } from "../../../redux/ProfileReducer";
 import {MyPosts} from "./MyPosts";
 import {PropsType} from "../../../App";
-
-
+import StoreContext from "../../../StoreContext";
 
 export const MyPostsContainer = (props: PropsType) => {
     let state = props.store.getState()
@@ -18,15 +17,20 @@ export const MyPostsContainer = (props: PropsType) => {
         props.store.dispatch(addPostActionCreator())
     }
 
-    let onPostChange = (text: string ) => {
+    let onPostChange = (text: string) => {
         let action = updateNewPostActionCreator(text)
         props.store.dispatch(action)
     }
 
     return (
-        <MyPosts postsData={state.profilePage.postsData}
-                 newPostText={state.profilePage.newPostText}
-                 updateNewPost={onPostChange}
-                 addPost={addPost}/>
+        <StoreContext.Consumer>{(store) => (
+            <MyPosts postsData={state.profilePage.postsData}
+                     newPostText={state.profilePage.newPostText}
+                     updateNewPost={onPostChange}
+                     addPost={addPost}/>
+        )
+        }
+        </StoreContext.Consumer>
+
     )
 }
