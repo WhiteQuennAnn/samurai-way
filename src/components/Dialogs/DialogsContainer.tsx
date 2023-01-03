@@ -7,14 +7,6 @@ export const DialogsContainer = (props: PropsType) => {
 
     let state = props.store.getState().dialogsPage
 
-    // let dialogsElements = state.dialogsData
-    //     .map(d => <DialogItem name={d.name} id={d.id}/>);
-    //
-    // let messagesElenents = state.messageItemData
-    //     .map(m => <MessageItem message={m.message}/>)
-    //
-    // let newMessageBody = state.newMessageBody
-
     let onSendMessageClick = () => {
         props.store.dispatch(sendMessageCreator())
     }
