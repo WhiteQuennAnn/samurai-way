@@ -11,7 +11,7 @@ import {PropsType} from "../../../App";
 import StoreContext from "../../../StoreContext";
 
 export const MyPostsContainer = (props: PropsType) => {
-    let state = props.store.getState()
+
 
     let addPost = () => {
         props.store.dispatch(addPostActionCreator())
@@ -23,12 +23,14 @@ export const MyPostsContainer = (props: PropsType) => {
     }
 
     return (
-        <StoreContext.Consumer>{(store) => (
-            <MyPosts postsData={state.profilePage.postsData}
-                     newPostText={state.profilePage.newPostText}
-                     updateNewPost={onPostChange}
-                     addPost={addPost}/>
-        )
+        <StoreContext.Consumer>{(store) => {
+            let state = props.store.getState()
+            return <MyPosts postsData={state.profilePage.postsData}
+                            newPostText={state.profilePage.newPostText}
+                            updateNewPost={onPostChange}
+                            addPost={addPost}/>
+        }
+
         }
         </StoreContext.Consumer>
 
