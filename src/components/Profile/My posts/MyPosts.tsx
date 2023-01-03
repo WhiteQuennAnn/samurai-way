@@ -21,7 +21,7 @@ export const MyPosts = (props: MyPostsTypeProps) => {
     let postsElements = props.postsData.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
     let newPostElement = React.createRef<HTMLTextAreaElement>();
 
-    let addPost = () => {
+    let onAddPost = () => {
         props.addPost();
 
     }
@@ -40,7 +40,7 @@ export const MyPosts = (props: MyPostsTypeProps) => {
                                value={props.newPostText}/></div>
                 <div>
                     <button
-                        onClick={addPost}> Add post
+                        onClick={onAddPost}> Add post
                     </button>
                 </div>
             </div>
