@@ -1,6 +1,4 @@
-import React, {ChangeEvent} from 'react';
-import s from "./MyPosts.module.css";
-import {Post} from "./Post/Post";
+import React from 'react';
 import {OnePostTypeProps} from "../../../Type";
 import {
     addPostActionCreator,
@@ -19,16 +17,15 @@ export type MyPostsTypeProps = {
 export const MyPostsContainer = (props: MyPostsTypeProps) => {
 
     let addPost = () => {
-        props.dispatch(addPostActionCreator())
+        props.store.dispatch(addPostActionCreator())
     }
 
     let onPostChange = (text: string) => {
         let action = updateNewPostActionCreator(text)
-        // props.updateNewPost(newText);
-        props.dispatch(action)
+        props.store.dispatch(action)
     }
 
     return (
-        <MyPosts postsData={} newPostText={} dispatch={} updateNewPost={onPostChange} addPost={addPost}/>
+        <MyPosts postsData={props.postsData} newPostText={} dispatch={} updateNewPost={onPostChange} addPost={addPost}/>
     )
 }
