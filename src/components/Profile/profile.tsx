@@ -5,6 +5,7 @@ import {ProfileInfo} from "./ProfileInfo/profileInfo";
 import {OnePostTypeProps} from "../../Type";
 import {AddPostActionType, ChangeNewTextActionType} from "../../redux/ProfileReducer";
 import {MyPostsContainer} from "./My posts/MyPostsContainer";
+import {PropsType} from "../../App";
 
 type ProfilePageType = {
     profilePage: {
@@ -14,7 +15,7 @@ type ProfilePageType = {
     dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
 }
 
-export const Profile = (props: ProfilePageType) => {
+export const Profile = (props: PropsType) => {
     return (
         <div>
             <ProfileInfo/>
