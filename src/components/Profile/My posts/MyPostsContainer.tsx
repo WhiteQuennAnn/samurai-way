@@ -10,7 +10,8 @@ import StoreContext from "../../../StoreContext";
 export const MyPostsContainer = (props: PropsType) => {
 
     return (
-        <StoreContext.Consumer>{(store) => {
+        <StoreContext.Consumer>{(store) =>
+        {
 
             let addPost = () => {
                 props.store.dispatch(addPostActionCreator())

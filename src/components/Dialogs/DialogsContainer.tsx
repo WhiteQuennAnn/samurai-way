@@ -9,7 +9,8 @@ export const DialogsContainer = (props: PropsType) => {
 
     }
     return (
-        <StoreContext.Consumer>{(store) => {
+        <StoreContext.Consumer>{(store) =>
+        {
             let state =store.getState().dialogsPage
 
             let onSendMessageClick = () => {
