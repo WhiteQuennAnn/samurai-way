@@ -18,7 +18,7 @@ export const Dialogs = (props: Global) => {
     let newMessageBody = state.newMessageBody
 
     let onSendMessageClick = () => {
-        props.dispatch(sendMessageCreator())
+        props.sendMessage
     }
 
     let onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {

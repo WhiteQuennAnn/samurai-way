@@ -8,7 +8,7 @@ import {Dialogs} from "./Dialogs";
 
 export const DialogsContainer = (props: Global) => {
 
-    let state = props.dialogsPage
+    let state = props.store.getState().dialogsPage
 
     let dialogsElements = state.dialogsData
         .map(d => <DialogItem name={d.name} id={d.id}/>);
@@ -22,13 +22,13 @@ export const DialogsContainer = (props: Global) => {
         props.dispatch(sendMessageCreator())
     }
 
-    let onNewMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        let body = e.currentTarget.value
+    let onNewMessageChange = (body: string) => {
         props.dispatch(updateNewMessageBodyCreator(body))
     }
     return (
 
-     <Dialogs dialogsPage={} dispatch={}/>
+        <Dialogs updateNewMessageBody={onNewMessageChange} sendMessage={onSendMessageClick}
+                 dialogsPage={state}/>
     );
 };
 
