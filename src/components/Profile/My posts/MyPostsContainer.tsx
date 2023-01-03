@@ -8,6 +8,7 @@ import {
     ChangeNewTextActionType,
     updateNewPostActionCreator
 } from "../../../redux/ProfileReducer";
+import {MyPosts} from "./MyPosts";
 
 export type MyPostsTypeProps = {
     postsData: Array<OnePostTypeProps>
@@ -33,22 +34,6 @@ export const MyPostsContainer = (props: MyPostsTypeProps) => {
     }
 
     return (
-        <div className={s.postsBlock}>
-            <h3> My posts </h3>
-            <div>
-                <div><textarea onChange={onPostChange}
-                               ref={newPostElement}
-                               value={props.newPostText}/></div>
-                <div>
-                    <button
-                        onClick={addPost}> Add post
-                    </button>
-                </div>
-            </div>
-
-            <div className={s.posts}>
-                {postsElements}
-            </div>
-        </div>
+        <MyPosts postsData={} newPostText={} dispatch={}/>
     )
 }
