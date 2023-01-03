@@ -1,8 +1,4 @@
-import React, {ChangeEvent} from 'react';
-import s from './Dialogs.module.css';
-import {DialogItem} from "./DialogItem/DialogsItem";
-import {MessageItem} from "./Message/Message";
-import {Global} from "../../Type";
+import React from 'react';
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/DialogsReducer";
 import {Dialogs} from "./Dialogs";
 import {PropsType} from "../../App";
@@ -20,11 +16,11 @@ export const DialogsContainer = (props: PropsType) => {
     // let newMessageBody = state.newMessageBody
 
     let onSendMessageClick = () => {
-        props.dispatch(sendMessageCreator())
+        props.store.dispatch(sendMessageCreator())
     }
 
     let onNewMessageChange = (body: string) => {
-        props.dispatch(updateNewMessageBodyCreator(body))
+        props.store.dispatch(updateNewMessageBodyCreator(body))
     }
     return (
 

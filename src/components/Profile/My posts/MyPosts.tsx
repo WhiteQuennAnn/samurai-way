@@ -12,8 +12,7 @@ export type MyPostsTypeProps = {
     // addPost: (postMessage: string) => void
     newPostText: string
     // updateNewPostText: (newText: string) => void
-    updateNewPost: (text: string | undefined) => void
-    dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
+    updateNewPost: (text: string ) => void
     addPost: () => void
 }
 
@@ -26,7 +25,7 @@ export const MyPosts = (props: MyPostsTypeProps) => {
     }
 
     let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        let text = newPostElement.current?.value
+        let text = e.currentTarget.value
         props.updateNewPost(text);
     }
 
