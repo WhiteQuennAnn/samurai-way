@@ -23,7 +23,6 @@ export const MyPostsContainer = (props: MyPostsTypeProps) => {
     let newPostElement = React.createRef<HTMLTextAreaElement>();
 
     let addPost = () => {
-        //props.addPost();
         props.dispatch(addPostActionCreator())
     }
 
@@ -34,6 +33,6 @@ export const MyPostsContainer = (props: MyPostsTypeProps) => {
     }
 
     return (
-        <MyPosts postsData={} newPostText={} dispatch={} updateNewPost={onPostChange}/>
+        <MyPosts postsData={} newPostText={} dispatch={} updateNewPost={onPostChange} addPost={addPost}/>
     )
 }
