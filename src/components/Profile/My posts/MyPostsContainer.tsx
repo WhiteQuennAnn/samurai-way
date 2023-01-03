@@ -15,6 +15,7 @@ export type MyPostsTypeProps = {
 }
 
 export const MyPostsContainer = (props: MyPostsTypeProps) => {
+    let state = props.store.getState()
 
     let addPost = () => {
         props.store.dispatch(addPostActionCreator())
@@ -26,6 +27,10 @@ export const MyPostsContainer = (props: MyPostsTypeProps) => {
     }
 
     return (
-        <MyPosts postsData={props.postsData} newPostText={} dispatch={} updateNewPost={onPostChange} addPost={addPost}/>
+        <MyPosts postsData={state.profilePage.postsData}
+                 newPostText={state.profilePage.newPostText}
+                 dispatch={}
+                 updateNewPost={onPostChange}
+                 addPost={addPost}/>
     )
 }
