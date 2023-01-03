@@ -12,7 +12,9 @@ export type MyPostsTypeProps = {
     // addPost: (postMessage: string) => void
     newPostText: string
     // updateNewPostText: (newText: string) => void
+    updateNewPost: (text: string | undefined) => void
     dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
+    addPost: () => void
 }
 
 export const MyPosts = (props: MyPostsTypeProps) => {
@@ -21,7 +23,6 @@ export const MyPosts = (props: MyPostsTypeProps) => {
 
     let onAddPost = () => {
         props.addPost();
-
     }
 
     let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {

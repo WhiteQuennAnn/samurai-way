@@ -5,18 +5,19 @@ import {MessageItem} from "./Message/Message";
 import {Global} from "../../Type";
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/DialogsReducer";
 import {Dialogs} from "./Dialogs";
+import {PropsType} from "../../App";
 
-export const DialogsContainer = (props: Global) => {
+export const DialogsContainer = (props: PropsType) => {
 
     let state = props.store.getState().dialogsPage
 
-    let dialogsElements = state.dialogsData
-        .map(d => <DialogItem name={d.name} id={d.id}/>);
-
-    let messagesElenents = state.messageItemData
-        .map(m => <MessageItem message={m.message}/>)
-
-    let newMessageBody = state.newMessageBody
+    // let dialogsElements = state.dialogsData
+    //     .map(d => <DialogItem name={d.name} id={d.id}/>);
+    //
+    // let messagesElenents = state.messageItemData
+    //     .map(m => <MessageItem message={m.message}/>)
+    //
+    // let newMessageBody = state.newMessageBody
 
     let onSendMessageClick = () => {
         props.dispatch(sendMessageCreator())

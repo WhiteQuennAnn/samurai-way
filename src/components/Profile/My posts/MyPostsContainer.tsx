@@ -7,6 +7,7 @@ import {
     updateNewPostActionCreator
 } from "../../../redux/ProfileReducer";
 import {MyPosts} from "./MyPosts";
+import {PropsType} from "../../../App";
 
 export type MyPostsTypeProps = {
     postsData: Array<OnePostTypeProps>
@@ -14,7 +15,7 @@ export type MyPostsTypeProps = {
     dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
 }
 
-export const MyPostsContainer = (props: MyPostsTypeProps) => {
+export const MyPostsContainer = (props: PropsType) => {
     let state = props.store.getState()
 
     let addPost = () => {
@@ -29,7 +30,6 @@ export const MyPostsContainer = (props: MyPostsTypeProps) => {
     return (
         <MyPosts postsData={state.profilePage.postsData}
                  newPostText={state.profilePage.newPostText}
-                 dispatch={}
                  updateNewPost={onPostChange}
                  addPost={addPost}/>
     )
