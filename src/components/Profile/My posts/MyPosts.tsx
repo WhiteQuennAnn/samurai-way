@@ -3,9 +3,9 @@ import s from "./MyPosts.module.css";
 import {Post} from "./Post/Post";
 import {OnePostTypeProps} from "../../../Type";
 import {
-       AddPostActionType,
+    AddPostActionType,
     ChangeNewTextActionType,
-    } from "../../../redux/ProfileReducer";
+} from "../../../redux/ProfileReducer";
 
 export type MyPostsTypeProps = {
     postsData: Array<OnePostTypeProps>

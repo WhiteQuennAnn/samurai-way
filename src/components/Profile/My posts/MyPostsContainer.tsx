@@ -9,11 +9,7 @@ import {
 import {MyPosts} from "./MyPosts";
 import {PropsType} from "../../../App";
 
-export type MyPostsTypeProps = {
-    postsData: Array<OnePostTypeProps>
-    newPostText: string
-    dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
-}
+
 
 export const MyPostsContainer = (props: PropsType) => {
     let state = props.store.getState()

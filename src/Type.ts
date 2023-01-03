@@ -1,4 +1,5 @@
 import {SendMessageType, updateNewMessageBodyType} from "./redux/DialogsReducer";
+import {AddPostActionType, ChangeNewTextActionType} from "./redux/ProfileReducer";
 
 export type StateType = {
     profilePage: {
@@ -11,6 +12,11 @@ export type StateType = {
         newMessageBody: string
     }
 }
+export type MyPostsTypeProps = {
+    postsData: Array<OnePostTypeProps>
+    newPostText: string
+    dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
+}
 
 export type Global = {
     dialogsPage: {
@@ -18,7 +24,7 @@ export type Global = {
         dialogsData: Array<OneDialogsDataPropsType>
         newMessageBody: string
     }
-    dispatch: (action: SendMessageType| updateNewMessageBodyType) => void
+    dispatch: (action: SendMessageType | updateNewMessageBodyType) => void
 }
 export type OneDialogsDataPropsType = {
     id: number
@@ -31,6 +37,6 @@ export type OneMessageItemDataProps = {
 }
 export type OnePostTypeProps = {
     id: number
-    message: string| undefined
+    message: string | undefined
     likesCount: number
 }
