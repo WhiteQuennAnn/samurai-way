@@ -6,8 +6,7 @@ let reducers = combineReducers(
     {
         dialogsPage: DialogsReducer,
         profilePage: ProfileReducer,
-        //dialogsPage: DialogsReducer
-    }
+      }
 );
 
 let store = createStore(reducers);
