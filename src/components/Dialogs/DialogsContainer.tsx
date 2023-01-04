@@ -53,11 +53,11 @@ let mapStateToProps = (state: Global) => {
 
 }
 
-let f2 = () => {
+let mapDispatchToProps = () => {
     return {
         c: 3
     }
 
 }
 
-const SuperDialogsContainer = connect(mapStateToProps, f2)(Dialogs)
+const SuperDialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs)
