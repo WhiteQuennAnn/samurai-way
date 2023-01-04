@@ -22,40 +22,16 @@ export type DialogsPropsType = {
     dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
 }
 
-export const DialogsContainer = (props: DialogsPropsType) => {
-
-    return (
-        <StoreContext.Consumer>
-            {store => {
-                let onNewMessageChange = (body: string) => {
-                    store.dispatch(updateNewMessageBodyCreator(body))
-                }
-                let onMessageClick = () => {
-                    store.dispatch(sendMessageCreator())
-                }
-
-                return (
-                    <Dialogs
-                        dialogsPage={store.getState().dialogsPage}
-                        updateNewMessageBody={onNewMessageChange}
-                        sendMessage={onMessageClick}
-                    />
-                )
-            }}
-        </StoreContext.Consumer>
-    )
-}
 
 let mapStateToProps = (state: Global) => {
     return {
         dialogsPage: state.dialogsPage
     }
-
 }
 
-let mapDispatchToProps = () => {
+let mapDispatchToProps = (dispatch) => {
     return {
-        updateNewMessageBody: () => {
+        updateNewMessageBody: (body: string) => {
             dispatch(updateNewMessageBodyCreator(body))
         },
         sendMessage: () => {
@@ -65,4 +41,4 @@ let mapDispatchToProps = () => {
 
 }
 
-const SuperDialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs)
+export const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs)
