@@ -5,32 +5,29 @@ import {
 } from "../../../redux/ProfileReducer";
 import {MyPosts} from "./MyPosts";
 import {PropsType} from "../../../App";
-import StoreContext from "../../../StoreContext";
 
-export const MyPostsContainer = (props: PropsType) => {
+import {connect} from "react-redux";
+import {Dialogs} from "../../Dialogs/Dialogs";
+import {Global} from "../../../Type";
 
-    return (
-        <StoreContext.Consumer>
-            {store => {
+const mapStateToProps = (state: Global) => {
+    return {
+        posts: state.profilePage.postsData,
+        newPostText: state.profilePage.newPostText
 
-            let addPost = () => {
-                props.store.dispatch(addPostActionCreator())
-            }
-
-            let onPostChange = (text: string) => {
-                let action = updateNewPostActionCreator(text)
-                props.store.dispatch(action)
-            }
-
-            let state = props.store.getState()
-            return <MyPosts postsData={state.profilePage.postsData}
-                            newPostText={state.profilePage.newPostText}
-                            updateNewPost={onPostChange}
-                            addPost={addPost}/>
-        }
-
-        }
-        </StoreContext.Consumer>
-
-    )
+    }
 }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateNewPost: (text) => {
+            let action = updateNewPostActionCreator(text)
+            dispatch(action)
+        },
+        addPost: () => {
+            dispatch(addPostActionCreator())
+        }
+
+    }
+}
+
+export const MyPostsContainer = connect(mapStateToProps, mapDispatchToProps)(MyPosts)
