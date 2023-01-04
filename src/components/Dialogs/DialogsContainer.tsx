@@ -29,7 +29,7 @@ let mapStateToProps = (state: Global) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = (dispatch: number) => {
     return {
         updateNewMessageBody: (body: string) => {
             dispatch(updateNewMessageBodyCreator(body))

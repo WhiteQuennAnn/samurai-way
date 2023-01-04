@@ -19,14 +19,13 @@ const mapStateToProps = (state: Global) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        updateNewPost: (text) => {
+        updateNewPost: (text: string) => {
             let action = updateNewPostActionCreator(text)
             dispatch(action)
         },
         addPost: () => {
             dispatch(addPostActionCreator())
         }
-
     }
 }
 
