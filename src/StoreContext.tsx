@@ -1,6 +1,6 @@
 import React from 'react'
+import {AppStoreType} from "./redux/redux-store";
 
-import { AppStoreType } from './Redux/ReduxStore'
 export const StoreContext = React.createContext({} as AppStoreType)
 
 export type ProviderType = {
