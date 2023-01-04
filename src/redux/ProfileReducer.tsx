@@ -33,7 +33,6 @@ export const ProfileReducer = (state = initialState, action: AddPostActionType |
             let stateCopy = {...state};
             stateCopy.newPostText = action.newText;
             return stateCopy;
-
         }
         default:
             return state;
