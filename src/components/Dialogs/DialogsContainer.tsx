@@ -1,12 +1,8 @@
 import React from 'react';
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/DialogsReducer";
-import { ActionsType } from '../../Redux/Store'
 import { StoreContext } from '../../StoreContext'
-
-import { DialogItem } from './DialogItem/Dialog.item'
 import { Dialogs } from './Dialogs'
-import c from './Dialogs.module.css'
-import { Message } from './Message/Message'
+import {AddPostActionType, ChangeNewTextActionType} from "../../redux/ProfileReducer";
 
 export type DialogsType = {
     id: number
@@ -20,10 +16,10 @@ export type DialogsPropsType = {
     dialogs: Array<DialogsType>
     messages: Array<MessagesType>
     newMessageBody: string
-    dispatch: (action: ActionsType) => void
+    dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
 }
 
-export const DialogsContainer = () => {
+export const DialogsContainer = (props: DialogsPropsType) => {
 
 return (
     <StoreContext.Consumer>
@@ -37,9 +33,9 @@ return (
 
             return (
                 <Dialogs
-                    dialogs={store.getState().dialogPage.dialogs}
-                    messages={store.getState().dialogPage.messages}
-                    newMessageBody={store.getState().dialogPage.newMessageBody}
+                    dialogs={store.getState().dialogsPage.dialogsData}
+                    messages={store.getState().dialogsPage.messageItemData}
+                    newMessageBody={store.getState().dialogsPage.newMessageBody}
                     updateNewMessageBody={onNewMessageChange}
                     onMessageClick={onMessageClick}
                 />

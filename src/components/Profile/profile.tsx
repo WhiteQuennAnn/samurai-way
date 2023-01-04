@@ -15,7 +15,7 @@ type ProfilePageType = {
     dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
 }
 
-export const Profile = (props: PropsType) => {
+export const Profile = (props: ProfilePageType) => {
     return (
         <div>
             <ProfileInfo/>
