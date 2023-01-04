@@ -16,7 +16,7 @@ export let rerenderEntireTree = () => {
         document.getElementById('root')
     )
 }
-rerenderEntireTree();
+//rerenderEntireTree();
 
 //store.subscribe(rerenderEntireTree)
 
