@@ -1,8 +1,9 @@
 import React from 'react';
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/DialogsReducer";
-import {StoreContext} from '../../StoreContext'
+
 import {Dialogs} from './Dialogs'
 import {AddPostActionType, ChangeNewTextActionType} from "../../redux/ProfileReducer";
+import {connect} from "react-redux";
 
 export type DialogsType = {
     id: number
@@ -42,3 +43,19 @@ export const DialogsContainer = (props: DialogsPropsType) => {
         </StoreContext.Consumer>
     )
 }
+
+let f1 = () => {
+    return {
+
+    }
+
+}
+
+let f2 = () => {
+    return {
+
+    }
+
+}
+
+const SuperDialogsContainer = connect (f1, f2) (Dialogs)
