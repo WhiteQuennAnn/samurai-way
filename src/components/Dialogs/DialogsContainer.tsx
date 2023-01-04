@@ -55,7 +55,12 @@ let mapStateToProps = (state: Global) => {
 
 let mapDispatchToProps = () => {
     return {
-        c: 3
+        updateNewMessageBody: () => {
+            dispatch(updateNewMessageBodyCreator(body))
+        },
+        sendMessage: () => {
+            dispatch(sendMessageCreator())
+        }
     }
 
 }
