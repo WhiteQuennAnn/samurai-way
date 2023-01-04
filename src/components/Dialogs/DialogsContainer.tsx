@@ -4,6 +4,8 @@ import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/Dialo
 import {Dialogs} from './Dialogs'
 import {AddPostActionType, ChangeNewTextActionType} from "../../redux/ProfileReducer";
 import {connect} from "react-redux";
+import {PropsType} from "../../App";
+import {Global} from "../../Type";
 
 export type DialogsType = {
     id: number
@@ -44,18 +46,18 @@ export const DialogsContainer = (props: DialogsPropsType) => {
     )
 }
 
-let f1 = () => {
+let mapStateToProps = (state: Global) => {
     return {
-
+        dialogsPage: state.dialogsPage
     }
 
 }
 
 let f2 = () => {
     return {
-
+        c: 3
     }
 
 }
 
-const SuperDialogsContainer = connect (f1, f2) (Dialogs)
+const SuperDialogsContainer = connect(mapStateToProps, f2)(Dialogs)
