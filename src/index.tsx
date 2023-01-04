@@ -3,7 +3,7 @@ import './index.css';
 import store, {AppStoreType} from "./redux/redux-store";
 import ReactDOM from "react-dom";
 import {App} from "./App";
-import StoreContext, {Provider} from "./StoreContext";
+import {Provider} from "./StoreContext";
 import {BrowserRouter} from "react-router-dom";
 
 export let rerenderEntireTree = () => {
