@@ -1,29 +1,50 @@
 import React from 'react';
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/DialogsReducer";
-import {Dialogs} from "./Dialogs";
-import {PropsType} from "../../App";
-import StoreContext from "../../StoreContext";
-import {AppStoreType} from "../../redux/redux-store";
+import { ActionsType } from '../../Redux/Store'
+import { StoreContext } from '../../StoreContext'
 
-export const DialogsContainer = (props: PropsType) => {
+import { DialogItem } from './DialogItem/Dialog.item'
+import { Dialogs } from './Dialogs'
+import c from './Dialogs.module.css'
+import { Message } from './Message/Message'
 
-    return (
-        <StoreContext.Consumer>{(store: AppStoreType) => {
-            let state = store.getState().dialogsPage
+export type DialogsType = {
+    id: number
+    name: string
+}
+export type MessagesType = {
+    id: number
+    message: string
+}
+export type DialogsPropsType = {
+    dialogs: Array<DialogsType>
+    messages: Array<MessagesType>
+    newMessageBody: string
+    dispatch: (action: ActionsType) => void
+}
 
-            let onSendMessageClick = () => {
+export const DialogsContainer = () => {
+
+return (
+    <StoreContext.Consumer>
+        {store => {
+            let onNewMessageChange = (body: string) => {
+                store.dispatch(updateNewMessageBodyCreator(body))
+            }
+            let onMessageClick = () => {
                 store.dispatch(sendMessageCreator())
             }
 
-            let onNewMessageChange = (body: string) => {
-                store.dispatch(updateNewMessageBodyCreator(body))
-                return <Dialogs updateNewMessageBody={onNewMessageChange} sendMessage={onSendMessageClick}
-                                dialogsPage={state}/>
-            }
-        }
-        }
-
-        </StoreContext.Consumer>
-    )
+            return (
+                <Dialogs
+                    dialogs={store.getState().dialogPage.dialogs}
+                    messages={store.getState().dialogPage.messages}
+                    newMessageBody={store.getState().dialogPage.newMessageBody}
+                    updateNewMessageBody={onNewMessageChange}
+                    onMessageClick={onMessageClick}
+                />
+            )
+        }}
+    </StoreContext.Consumer>
+)
 }
-}\

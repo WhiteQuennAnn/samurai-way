@@ -11,7 +11,7 @@ export type PropsType = {
     store: AppStoreType
 }
 
-export const App: React.FC<PropsType> = (props) => {
+export const App = () => {
     return (
         <div className="app-wrapper">
             <Header/>
