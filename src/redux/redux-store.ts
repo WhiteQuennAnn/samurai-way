@@ -13,6 +13,6 @@ let store = createStore(reducers);
 
 export type AppStoreType = ReturnType<typeof reducers>;
 
-window.store = store;
+//window.store = store;
 
 export default store;
