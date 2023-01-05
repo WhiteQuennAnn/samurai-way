@@ -11,7 +11,7 @@ let reducers = combineReducers(
 
 let store = createStore(reducers);
 
-export type AppStoreType = typeof store;
+export type AppStoreType = ReturnType<typeof reducers>;
 
 window.store = store;
 
