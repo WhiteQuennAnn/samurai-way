@@ -6,6 +6,7 @@ import {AddPostActionType, ChangeNewTextActionType} from "../../redux/ProfileRed
 import {connect} from "react-redux";
 import {PropsType} from "../../App";
 import {Global} from "../../Type";
+import {AppStoreType} from "../../redux/redux-store";
 
 export type DialogsType = {
     id: number
@@ -23,7 +24,7 @@ export type DialogsPropsType = {
 }
 
 
-let mapStateToProps = (state: Global) => {
+let mapStateToProps = (state: AppStoreType) => {
     return {
         dialogsPage: state.dialogsPage
     }

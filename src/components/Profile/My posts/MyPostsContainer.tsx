@@ -9,8 +9,9 @@ import {PropsType} from "../../../App";
 import {connect} from "react-redux";
 import {Dialogs} from "../../Dialogs/Dialogs";
 import {Global} from "../../../Type";
+import {AppStoreType} from "../../../redux/redux-store";
 
-const mapStateToProps = (state: Global) => {
+const mapStateToProps = (state: AppStoreType) => {
     return {
         posts: state.profilePage.postsData,
         newPostText: state.profilePage.newPostText
