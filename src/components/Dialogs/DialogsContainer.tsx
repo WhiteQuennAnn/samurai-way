@@ -1,12 +1,12 @@
 import React from 'react';
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/DialogsReducer";
-
 import {Dialogs} from './Dialogs'
 import {AddPostActionType, ChangeNewTextActionType} from "../../redux/ProfileReducer";
 import {connect} from "react-redux";
 import {PropsType} from "../../App";
 import {Global, OnePostTypeProps} from "../../Type";
 import {AppStoreType} from "../../redux/redux-store";
+import {Dispatch} from "redux";
 
 export type DialogsType = {
     id: number
@@ -33,7 +33,7 @@ let mapStateToProps = (state: AppStoreType): mapStateToPropsType => {
     }
 }
 
-let mapDispatchToProps = (dispatch: any) => {
+let mapDispatchToProps = (dispatch: Dispatch) => {
     return {
         updateNewMessageBody: (body: string) => {
             dispatch(updateNewMessageBodyCreator(body))
