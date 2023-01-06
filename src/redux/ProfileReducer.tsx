@@ -1,7 +1,6 @@
 import {OnePostTypeProps} from "../Type";
 import React from "react";
 
-
 export type ProfileType = {
     postsData: OnePostTypeProps[],
     newPostText: string
