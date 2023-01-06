@@ -23,6 +23,10 @@ export type initialStateType = typeof initialState
 export const UsersReducer = (state = initialState, action: followACType | unFollowACType): initialStateType => {
     switch (action.type) {
         case FOLLOW:
+            let stateCopy = {
+                ...state,
+                users: state.users.map( )
+            }
 
         case UNFOLLOW:
 
