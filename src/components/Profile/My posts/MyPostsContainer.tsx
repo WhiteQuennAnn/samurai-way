@@ -4,10 +4,8 @@ import {
     updateNewPostActionCreator
 } from "../../../redux/ProfileReducer";
 import {MyPosts} from "./MyPosts";
-import {PropsType} from "../../../App";
 import {connect} from "react-redux";
-import {Dialogs} from "../../Dialogs/Dialogs";
-import {Global, OnePostTypeProps} from "../../../Type";
+import {OnePostTypeProps} from "../../../Type";
 import {AppStoreType} from "../../../redux/redux-store";
 
 type mapStateToPropstype = {
