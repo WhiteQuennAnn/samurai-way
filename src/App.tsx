@@ -17,18 +17,9 @@ export const App = () => {
             <Header/>
             <Nav/>
             <div className="app-wrapper-content">
-                <Route path='/dialogs' render={() => <DialogsContainer
-                    //store={props.store}
-                    // dialogsPage={props.store.getState().dialogsPage}
-                    // dispatch={props.store.dispatch.bind(props.store)}
-                />}/>
-                <Route path='/profile' render={() => <Profile
-                    //store={props.store}
-                    // dispatch={props.store.dispatch.bind(props.store)}
-                    // profilePage={props.store.getState().profilePage}
-                ></Profile>}
-
-                />
+                <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+                <Route path='/profile' render={() => <Profile/>} />
+                <Route path='/users' render={() => <div> users </div>}/>
 
             </div>
         </div>
