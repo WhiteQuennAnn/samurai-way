@@ -23,7 +23,7 @@ export type initialStateType = typeof initialState
 export const UsersReducer = (state = initialState, action: followACType | unFollowACType): initialStateType => {
     switch (action.type) {
         case FOLLOW:
-           return {
+            return {
                 ...state,
                 users: state.users.map(u => {
                     if (u.id === action.userId) {
@@ -34,7 +34,15 @@ export const UsersReducer = (state = initialState, action: followACType | unFoll
             }
 
         case UNFOLLOW:
-
+            return {
+                ...state,
+                users: state.users.map(u => {
+                    if (u.id === action.userId) {
+                        return {...u, followed: false}
+                    }
+                    return u
+                })
+            }
         default:
             return state;
     }
