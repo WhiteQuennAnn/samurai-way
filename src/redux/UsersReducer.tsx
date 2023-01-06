@@ -2,9 +2,11 @@ import React from "react";
 
 let initialState = {
     users: [
-        {id: 1, message: "Hey how are you", likesCount: 22},
-        {id: 2, message: "its my first post", likesCount: 65}],
-    newPostText: "Anna"
+        {id: 1, fullName: "Igor", status: 'I am boss', location: { city: 'Minsk', country: 'Belarus'}},
+        {id: 1, fullName: "Sasha", status: 'I am teacher', location: { city: 'Madrid', country: 'Spane'}},
+        {id: 1, fullName: "Dima", status: 'I am doctor', location: { city: 'Rome', country: 'Italy'}},
+            ],
+
 }
 export type initialStateType = typeof initialState
 
