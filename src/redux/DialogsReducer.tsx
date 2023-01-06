@@ -28,7 +28,7 @@ export const DialogsReducer = (state = initialState, action: SendMessageType | u
         case 'UPDATE-NEW-MESSAGE-BODY':
             return {
                 ...state, newMessageBody: action.body
-            }
+            };
 
         case 'SEND-MESSAGE':
             let body = state.newMessageBody;
@@ -37,7 +37,7 @@ export const DialogsReducer = (state = initialState, action: SendMessageType | u
                 ...state,
                 newMessageBody: "",
                 messageItemData: [...state.messageItemData, {id: 4, message: body}]
-            }
+            };
         default:
             return state;
     }
