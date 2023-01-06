@@ -2,36 +2,38 @@ import React from "react";
 
 let initialState = {
     users: [
-        {id: 1, fullName: "Igor", status: 'I am boss', location: { city: 'Minsk', country: 'Belarus'}},
-        {id: 1, fullName: "Sasha", status: 'I am teacher', location: { city: 'Madrid', country: 'Spane'}},
-        {id: 1, fullName: "Dima", status: 'I am doctor', location: { city: 'Rome', country: 'Italy'}},
-            ],
+        {id: 1, followed: false, fullName: "Igor", status: 'I am boss', location: {city: 'Minsk', country: 'Belarus'}},
+        {
+            id: 2,
+            followed: true,
+            fullName: "Sasha",
+            status: 'I am teacher',
+            location: {city: 'Madrid', country: 'Spane'}
+        },
+        {id: 3, followed: false, fullName: "Dima", status: 'I am doctor', location: {city: 'Rome', country: 'Italy'}},
+    ],
 
 }
 export type initialStateType = typeof initialState
 
-export const UsersReducer = (state = initialState, action: AddPostActionType | ChangeNewTextActionType): initialStateType => {
+export const UsersReducer = (state = initialState, action: followACType | unFollowACType): initialStateType => {
     switch (action.type) {
 
         default:
             return state;
     }
 }
-export type AddPostActionType = ReturnType<typeof addPostActionCreator>
-export type ChangeNewTextActionType = ReturnType<typeof updateNewPostActionCreator>
+export type followACType = ReturnType<typeof followAC>
+export type unFollowACType = ReturnType<typeof unFollowAC>
 
-export const addPostActionCreator = () => {
+export const followAC = () => {
     debugger
-    return {
-        type: 'ADD-POST',
-        postMessage: React.createRef<HTMLTextAreaElement>().current?.value
-    } as const
+    return {} as const
 }
 
-export const updateNewPostActionCreator = (text: string) => {
+export const unFollowAC = () => {
     return {
-        type: 'UPDATE-NEW-POST-TEXT',
-        newText: text
+
     } as const
 }
 
