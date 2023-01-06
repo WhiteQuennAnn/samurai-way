@@ -43,6 +43,11 @@ export const UsersReducer = (state = initialState, action: followACType | unFoll
                     return u
                 })
             }
+        case SET_USERS : {
+            return {
+                ...state, users: [...state.users, ...action.users]
+            }
+        }
         default:
             return state;
     }
