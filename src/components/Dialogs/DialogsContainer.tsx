@@ -5,7 +5,7 @@ import {Dialogs} from './Dialogs'
 import {AddPostActionType, ChangeNewTextActionType} from "../../redux/ProfileReducer";
 import {connect} from "react-redux";
 import {PropsType} from "../../App";
-import {Global} from "../../Type";
+import {Global, OnePostTypeProps} from "../../Type";
 import {AppStoreType} from "../../redux/redux-store";
 
 export type DialogsType = {
@@ -22,9 +22,12 @@ export type DialogsPropsType = {
     newMessageBody: string
     dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
 }
+export type mapStateToPropsType = {
+    postsData: OnePostTypeProps[]
+    newPostText: string
+}
 
-
-let mapStateToProps = (state: AppStoreType) => {
+let mapStateToProps = (state: AppStoreType): mapStateToPropsType => {
     return {
         dialogsPage: state.dialogsPage
     }

@@ -8,18 +8,22 @@ import {connect} from "react-redux";
 import {OnePostTypeProps} from "../../../Type";
 import {AppStoreType} from "../../../redux/redux-store";
 
-type mapStateToPropstype = {
-    postsData: Array<OnePostTypeProps>
+type mapStateToPropsType = {
+    postsData: OnePostTypeProps[]
     newPostText: string
 }
+type mapDispatchToProps = {
+    updateNewPost: (text: string) => void
+    addPost: () => void
+}
 
-const mapStateToProps = (state: AppStoreType): mapStateToPropstype => {
+const mapStateToProps = (state: AppStoreType): mapStateToPropsType => {
     return {
         posts: state.profilePage.postsData,
         newPostText: state.profilePage.newPostText
     }
 }
-const mapDispatchToProps = (dispatch: any) => {
+const mapDispatchToProps = (dispatch: any): mapDispatchToProps => {
     return {
         updateNewPost: (text: string) => {
             let action = updateNewPostActionCreator(text)
