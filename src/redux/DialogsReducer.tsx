@@ -1,11 +1,12 @@
 import {OneDialogsDataPropsType, OneMessageItemDataProps} from "../Type";
-import {addPostActionCreator, updateNewPostActionCreator} from "./ProfileReducer";
 
 type DialogsType = {
     messageItemData: OneMessageItemDataProps[]
     dialogsData: OneDialogsDataPropsType[]
     newMessageBody: string
 }
+
+export type initialStateType = typeof initialState
 
 export let initialState: DialogsType = {
     messageItemData: [
