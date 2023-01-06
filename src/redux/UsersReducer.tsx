@@ -25,7 +25,12 @@ export const UsersReducer = (state = initialState, action: followACType | unFoll
         case FOLLOW:
             let stateCopy = {
                 ...state,
-                users: state.users.map( )
+                users: state.users.map(u => {
+                    if (u.id === action.userId) {
+                        return {...u, followed: true}
+                    }
+                    return u
+                })
             }
 
         case UNFOLLOW:
