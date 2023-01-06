@@ -31,7 +31,7 @@ export const DialogsReducer = (state = initialState, action: SendMessageType | u
             stateCopy.newMessageBody = action.body;
             return stateCopy;
         case 'SEND-MESSAGE':
-            let body = stateCopy.newMessageBody;
+            let body = state.newMessageBody;
             stateCopy.newMessageBody = "";
             stateCopy.messageItemData.push({id: 4, message: body});
             return stateCopy;
