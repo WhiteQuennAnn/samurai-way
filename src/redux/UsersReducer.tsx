@@ -1,5 +1,9 @@
 import React from "react";
 
+const FOLLOW = 'FOLLOW';
+
+const UNFOLLOW = 'UNFOLLOW';
+
 let initialState = {
     users: [
         {id: 1, followed: false, fullName: "Igor", status: 'I am boss', location: {city: 'Minsk', country: 'Belarus'}},
@@ -27,14 +31,12 @@ export type followACType = ReturnType<typeof followAC>
 export type unFollowACType = ReturnType<typeof unFollowAC>
 
 export const followAC = () => {
-    debugger
-    return {} as const
+
+    return {type: FOLLOW} as const
 }
 
 export const unFollowAC = () => {
-    return {
-
-    } as const
+    return {type: UNFOLLOW} as const
 }
 
 
