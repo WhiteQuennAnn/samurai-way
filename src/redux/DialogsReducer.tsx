@@ -21,16 +21,21 @@ export let initialState: DialogsType = {
     ],
     newMessageBody: ""
 }
+
 export const DialogsReducer = (state = initialState, action: SendMessageType | updateNewMessageBodyType): initialStateType => {
 
-    let stateCopy = {...state, messageItemData: [...state.messageItemData]}
-
+    let stateCopy;
 
     switch (action.type) {
         case 'UPDATE-NEW-MESSAGE-BODY':
-            stateCopy.newMessageBody = action.body;
+            stateCopy = {
+                ...state, newMessageBody: action.body
+            }
             return stateCopy;
         case 'SEND-MESSAGE':
+            stateCopy = {
+                ...state
+            }
             let body = state.newMessageBody;
             stateCopy.newMessageBody = "";
             stateCopy.messageItemData.push({id: 4, message: body});
