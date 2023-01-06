@@ -13,7 +13,7 @@ type mapStateToPropsType = {
     postsData: OnePostTypeProps[]
     newPostText: string
 }
-type mapDispatchToProps = {
+type mapDispatchToPropsType = {
     updateNewPost: (text: string) => void
     addPost: () => void
 }
@@ -24,7 +24,7 @@ const mapStateToProps = (state: AppStoreType): mapStateToPropsType => {
         newPostText: state.profilePage.newPostText
     }
 }
-const mapDispatchToProps = (dispatch: Dispatch): mapDispatchToProps => {
+const mapDispatchToProps = (dispatch: Dispatch): mapDispatchToPropsType => {
     return {
         updateNewPost: (text: string) => {
             let action = updateNewPostActionCreator(text)

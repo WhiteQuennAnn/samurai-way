@@ -23,8 +23,11 @@ export type DialogsPropsType = {
     dispatch: (action: AddPostActionType | ChangeNewTextActionType) => void
 }
 export type mapStateToPropsType = {
-    postsData: OnePostTypeProps[]
-    newPostText: string
+    dialogsPage: DialogsType
+}
+type mapDispatchToPropsType = {
+    updateNewMessageBody: (body: string) => void
+    sendMessage: () => void
 }
 
 let mapStateToProps = (state: AppStoreType): mapStateToPropsType => {
@@ -33,7 +36,7 @@ let mapStateToProps = (state: AppStoreType): mapStateToPropsType => {
     }
 }
 
-let mapDispatchToProps = (dispatch: Dispatch) => {
+let mapDispatchToProps = (dispatch: Dispatch): mapDispatchToPropsType => {
     return {
         updateNewMessageBody: (body: string) => {
             dispatch(updateNewMessageBodyCreator(body))
@@ -42,7 +45,6 @@ let mapDispatchToProps = (dispatch: Dispatch) => {
             dispatch(sendMessageCreator())
         }
     }
-
 }
 
 export const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs)

@@ -7,7 +7,7 @@ type DialogsType = {
     newMessageBody: string
 }
 
-let initialState: DialogsType = {
+export let initialState: DialogsType = {
     messageItemData: [
         {id: 1, message: "Hello"},
         {id: 2, message: "Pike"},
