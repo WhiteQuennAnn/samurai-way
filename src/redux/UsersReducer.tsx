@@ -1,8 +1,8 @@
 import React from "react";
 
 const FOLLOW = 'FOLLOW';
-
 const UNFOLLOW = 'UNFOLLOW';
+const SET_USERS = 'SET_USERS';
 
 let initialState = {
     users: [
@@ -50,13 +50,16 @@ export const UsersReducer = (state = initialState, action: followACType | unFoll
 export type followACType = ReturnType<typeof followAC>
 export type unFollowACType = ReturnType<typeof unFollowAC>
 
-export const followAC = () => {
+export const followAC = (userId: number) => {
 
     return {type: FOLLOW, userId} as const
 }
 
-export const unFollowAC = () => {
+export const unFollowAC = (userId: number) => {
     return {type: UNFOLLOW, userId} as const
+}
+export const setUsersAC = (users: Array<string>) => {
+    return {type: SET_USERS, users} as const
 }
 
 
