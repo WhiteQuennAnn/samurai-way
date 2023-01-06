@@ -1,7 +1,25 @@
 import React from 'react';
 import styles from './users.module.css';
 
-const Users = (props: any) => {
+let Users = (props: any) => {
+
+    props.setUsers(
+        [
+            {id: 1, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIeKOvIvCR4DM345hjZsPpWCh-WISvmvM5sFalyQuU&s', followed: false, fullName: "Igor", status: 'I am boss', location: {city: 'Minsk', country: 'Belarus'}},
+            {
+                id: 2,
+                photoUrl: 'https://strana.today/img/forall/u/0/36/foto-1-pozdravleniya-s-rozhdestvom-svoimi-slovami.jpg',
+                followed: true,
+                fullName: "Sasha",
+                status: 'I am teacher',
+                location: {city: 'Madrid', country: 'Spane'}
+            },
+            {id: 3,
+                photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1-WH5AQLiQj5kaHs7HpoVAYooOWsaJoZj1ynrETM&s ',
+                followed: false, fullName: "Dima", status: 'I am doctor', location: {city: 'Rome', country: 'Italy'}},
+        ]
+    )
+
     return (
         <div>
             {
