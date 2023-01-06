@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './users.module.css';
 
 const Users = (props: any) => {
     return (
@@ -7,7 +8,7 @@ const Users = (props: any) => {
                 props.users.map(u => <div key={u.id}>
 <span>
     <div>
-        <img src = {u.photoUrl} />
+        <img src = {u.photoUrl} className={styles.usersPhoto}/>
     </div>
 
     <div>
