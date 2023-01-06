@@ -1,9 +1,22 @@
 import React from 'react';
 
-const Users = () => {
+const Users = (props: any) => {
     return (
         <div>
-            users will be here
+            {
+                props.users.map(u => <div key={u.id}>
+<span>
+    <div>
+        <img/>
+    </div>
+
+    <div>
+        <button> Follow</button>
+    </div>
+</span>
+
+                </div>)
+            }
         </div>
     );
 };
