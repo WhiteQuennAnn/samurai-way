@@ -22,6 +22,9 @@ export type initialStateType = typeof initialState
 
 export const UsersReducer = (state = initialState, action: followACType | unFollowACType): initialStateType => {
     switch (action.type) {
+        case FOLLOW:
+
+        case UNFOLLOW:
 
         default:
             return state;
@@ -32,11 +35,11 @@ export type unFollowACType = ReturnType<typeof unFollowAC>
 
 export const followAC = () => {
 
-    return {type: FOLLOW} as const
+    return {type: FOLLOW, userId} as const
 }
 
 export const unFollowAC = () => {
-    return {type: UNFOLLOW} as const
+    return {type: UNFOLLOW, userId} as const
 }
 
 
