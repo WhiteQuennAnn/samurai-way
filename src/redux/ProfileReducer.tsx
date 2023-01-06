@@ -13,8 +13,9 @@ let initialState: ProfileType = {
         {id: 2, message: "its my first post", likesCount: 65}],
     newPostText: "Anna"
 }
+export type initialStateType = typeof initialState
 
-export const ProfileReducer = (state = initialState, action: AddPostActionType | ChangeNewTextActionType) => {
+export const ProfileReducer = (state = initialState, action: AddPostActionType | ChangeNewTextActionType): initialStateType => {
     switch (action.type) {
         case 'ADD-POST': {
             let newPost: OnePostTypeProps = {
