@@ -1,13 +1,7 @@
-import {OnePostTypeProps} from "../Type";
 import React from "react";
 
-export type ProfileType = {
-    postsData: OnePostTypeProps[],
-    newPostText: string
-}
-
-let initialState: ProfileType = {
-    postsData: [
+let initialState = {
+    users: [
         {id: 1, message: "Hey how are you", likesCount: 22},
         {id: 2, message: "its my first post", likesCount: 65}],
     newPostText: "Anna"
