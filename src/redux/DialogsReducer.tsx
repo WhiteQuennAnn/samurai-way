@@ -24,23 +24,20 @@ export let initialState: DialogsType = {
 
 export const DialogsReducer = (state = initialState, action: SendMessageType | updateNewMessageBodyType): initialStateType => {
 
-    let stateCopy;
-
     switch (action.type) {
         case 'UPDATE-NEW-MESSAGE-BODY':
-            stateCopy = {
+            return {
                 ...state, newMessageBody: action.body
             }
-            return stateCopy;
+
         case 'SEND-MESSAGE':
             let body = state.newMessageBody;
 
-            stateCopy = {
+            return {
                 ...state,
                 newMessageBody: "",
                 messageItemData: [...state.messageItemData, {id: 4, message: body}]
             }
-            return stateCopy;
         default:
             return state;
     }
