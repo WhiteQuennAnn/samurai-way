@@ -6,15 +6,18 @@ const SET_USERS = 'SET_USERS';
 
 let initialState = {
     users: [
-        {id: 1, followed: false, fullName: "Igor", status: 'I am boss', location: {city: 'Minsk', country: 'Belarus'}},
+        {id: 1, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIeKOvIvCR4DM345hjZsPpWCh-WISvmvM5sFalyQuU&s', followed: false, fullName: "Igor", status: 'I am boss', location: {city: 'Minsk', country: 'Belarus'}},
         {
             id: 2,
+            photoUrl: 'https://strana.today/img/forall/u/0/36/foto-1-pozdravleniya-s-rozhdestvom-svoimi-slovami.jpg',
             followed: true,
             fullName: "Sasha",
             status: 'I am teacher',
             location: {city: 'Madrid', country: 'Spane'}
         },
-        {id: 3, followed: false, fullName: "Dima", status: 'I am doctor', location: {city: 'Rome', country: 'Italy'}},
+        {id: 3,
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1-WH5AQLiQj5kaHs7HpoVAYooOWsaJoZj1ynrETM&s ',
+            followed: false, fullName: "Dima", status: 'I am doctor', location: {city: 'Rome', country: 'Italy'}},
     ],
 
 }

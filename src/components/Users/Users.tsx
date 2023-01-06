@@ -7,7 +7,7 @@ const Users = (props: any) => {
                 props.users.map(u => <div key={u.id}>
 <span>
     <div>
-        <img/>
+        <img src = {u.photoUrl} />
     </div>
 
     <div>
