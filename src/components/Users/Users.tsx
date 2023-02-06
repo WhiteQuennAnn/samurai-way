@@ -1,8 +1,10 @@
 import React from 'react';
 import styles from './users.module.css';
+import axios from "axios";
 
 let Users = (props: any) => {
     if (props.users.length === 0) {
+        axios.get("https://social-network.samuraijs.com/api/1.0/")
         props.setUsers(
             [
                 {
